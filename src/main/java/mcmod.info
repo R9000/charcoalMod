@@ -1,0 +1,17 @@
+[
+{
+"modid": "charcoalmod",
+"name": "The Charcoal Mod",
+"description": "Oh, the wonderful things you can do with charcoal!",
+"mcversion": "1.7.10",
+"version": "0.5-1.7.10",
+"url": "",
+"upodateUrl": "",
+"authorList": [ "R9000" ],
+"credits": "Thanks to Vswe and _Bedrock_Miner_!",
+"logoFile": "/assets//charcoalmod/charcoalMod.png",
+"Screenshots": [],
+"parent": "",
+"dependencies": []
+}
+]

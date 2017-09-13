@@ -1,0 +1,87 @@
+---- Minecraft Crash Report ----
+// Don't be sad. I'll do better next time, I promise!
+
+Time: 04/10/15 02:54
+Description: Ticking block entity
+
+java.lang.ArrayIndexOutOfBoundsException: 4
+	at uk.co.lastresorts.charcoalmod.tileentities.TileEntityBatteryBase.getCanAdd(TileEntityBatteryBase.java:150)
+	at uk.co.lastresorts.charcoalmod.tileentities.TileEntityBasicCharcoalWire2.checkForUsers(TileEntityBasicCharcoalWire2.java:164)
+	at uk.co.lastresorts.charcoalmod.tileentities.TileEntityBasicCharcoalWire2.setNetwork(TileEntityBasicCharcoalWire2.java:97)
+	at uk.co.lastresorts.charcoalmod.tileentities.TileEntityBasicCharcoalWire2.connectDifferentAdjacentWires(TileEntityBasicCharcoalWire2.java:188)
+	at uk.co.lastresorts.charcoalmod.tileentities.TileEntityBasicCharcoalWire2.updateEntity(TileEntityBasicCharcoalWire2.java:38)
+	at net.minecraft.world.World.updateEntities(World.java:2160)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:515)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:703)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at uk.co.lastresorts.charcoalmod.tileentities.TileEntityBatteryBase.getCanAdd(TileEntityBatteryBase.java:150)
+	at uk.co.lastresorts.charcoalmod.tileentities.TileEntityBasicCharcoalWire2.checkForUsers(TileEntityBasicCharcoalWire2.java:164)
+	at uk.co.lastresorts.charcoalmod.tileentities.TileEntityBasicCharcoalWire2.setNetwork(TileEntityBasicCharcoalWire2.java:97)
+	at uk.co.lastresorts.charcoalmod.tileentities.TileEntityBasicCharcoalWire2.connectDifferentAdjacentWires(TileEntityBasicCharcoalWire2.java:188)
+	at uk.co.lastresorts.charcoalmod.tileentities.TileEntityBasicCharcoalWire2.updateEntity(TileEntityBasicCharcoalWire2.java:38)
+
+-- Block entity being ticked --
+Details:
+	Name: BASIC_WIRE_2 // uk.co.lastresorts.charcoalmod.tileentities.TileEntityBasicCharcoalWire2
+	Block type: ID #185 (tile.basic_wire2 // uk.co.lastresorts.charcoalmod.blocks.BlockBasicCharcoalWire2)
+	Block data value: 0 / 0x0 / 0b0000
+	Block location: World: (1046,69,715), Chunk: (at 6,4,11 in 65,44; contains blocks 1040,0,704 to 1055,255,719), Region: (2,1; contains chunks 64,32 to 95,63, blocks 1024,0,512 to 1535,255,1023)
+	Actual block type: ID #185 (tile.basic_wire2 // uk.co.lastresorts.charcoalmod.blocks.BlockBasicCharcoalWire2)
+	Actual block data value: 0 / 0x0 / 0b0000
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:2160)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:515)
+
+-- Affected level --
+Details:
+	Level name: Copy of Copy of Copy of Copy of
+	All players: 1 total; [EntityPlayerMP['Player334'/138, l='Copy of Copy of Copy of Copy of', x=1047.49, y=69.00, z=712.68]]
+	Chunk stats: ServerChunkCache: 1250 Drop: 0
+	Level seed: -3676412433012789111
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (52,64,252), Chunk: (at 4,4,12 in 3,15; contains blocks 48,0,240 to 63,255,255), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 144528 game time, 5000 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 31281 (now: false), thunder time: 98889 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:703)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_60, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 754323864 bytes (719 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1448 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1448-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1448} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1448-1.7.10.jar) 
+	UCHIJAAAA	charcoalmod{0.7-1.7.10} [The Charcoal Mod] (bin) 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Player Count: 1 / 8; [EntityPlayerMP['Player334'/138, l='Copy of Copy of Copy of Copy of', x=1047.49, y=69.00, z=712.68]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

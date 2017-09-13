@@ -1,0 +1,530 @@
+[01:51:39] [main/INFO]: Setting user: Player78
+[01:51:41] [Client thread/INFO]: LWJGL Version: 2.9.1
+[01:51:45] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[01:51:45] [Sound Library Loader/INFO]: Sound engine started
+[01:51:47] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[01:51:47] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[01:51:48] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[01:51:48] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[01:51:48] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[01:51:49] [Sound Library Loader/INFO]: Sound engine started
+[01:52:10] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[01:52:10] [Server thread/INFO]: Generating keypair
+[01:52:10] [Server thread/INFO]: Preparing start region for level 0
+[01:52:11] [Server thread/INFO]: Changing view distance to 12, from 10
+[01:52:11] [Server thread/INFO]: Player78[local:E:95233422] logged in with entity id 142 at (1045.9107663333996, 70.0, 714.8058840612658)
+[01:52:11] [Server thread/INFO]: Player78 joined the game
+[01:52:32] [Server thread/INFO]: Saving and pausing game...
+[01:52:32] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[01:52:32] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[01:52:32] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[01:56:56] [Server thread/INFO]: Saving and pausing game...
+[01:56:56] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[01:56:56] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[01:56:56] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[01:56:57] [Server thread/INFO]: Stopping server
+[01:56:57] [Server thread/INFO]: Saving players
+[01:56:57] [Server thread/INFO]: Saving worlds
+[01:56:57] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[01:56:57] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[01:56:57] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[01:56:58] [Client thread/INFO]: Stopping!
+[02:58:39] [Server thread/INFO]: Starting minecraft server version 1.7.10
+[02:58:42] [Server thread/INFO]: Loading properties
+[02:58:42] [Server thread/WARN]: server.properties does not exist
+[02:58:42] [Server thread/INFO]: Generating new properties file
+[02:58:42] [Server thread/WARN]: Failed to load eula.txt
+[02:58:42] [Server thread/INFO]: You need to agree to the EULA in order to run the server. Go to eula.txt for more info.
+[02:59:18] [Server thread/INFO]: Starting minecraft server version 1.7.10
+[02:59:21] [Server thread/INFO]: Loading properties
+[02:59:21] [Server thread/INFO]: You need to agree to the EULA in order to run the server. Go to eula.txt for more info.
+[02:59:56] [Server thread/INFO]: Starting minecraft server version 1.7.10
+[03:00:00] [Server thread/INFO]: Loading properties
+[03:00:00] [Server thread/INFO]: You need to agree to the EULA in order to run the server. Go to eula.txt for more info.
+[03:00:42] [main/INFO]: Setting user: Player937
+[03:00:44] [Client thread/INFO]: LWJGL Version: 2.9.1
+[03:00:47] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:00:48] [Sound Library Loader/INFO]: Sound engine started
+[03:00:50] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:00:50] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:00:50] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:00:50] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:00:50] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:00:51] [Sound Library Loader/INFO]: Sound engine started
+[03:00:57] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[03:00:57] [Server thread/INFO]: Generating keypair
+[03:00:57] [Server thread/INFO]: Preparing start region for level 0
+[03:00:58] [Server thread/INFO]: Changing view distance to 12, from 10
+[03:00:59] [Server thread/INFO]: Player937[local:E:17b1abee] logged in with entity id 142 at (1045.7193292679517, 69.0, 712.6717018635134)
+[03:00:59] [Server thread/INFO]: Player937 joined the game
+[03:01:31] [Server thread/INFO]: Saving and pausing game...
+[03:01:31] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:01:31] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:01:31] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:01:32] [Server thread/INFO]: Stopping server
+[03:01:32] [Server thread/INFO]: Saving players
+[03:01:32] [Server thread/INFO]: Saving worlds
+[03:01:32] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:01:32] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:01:32] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:01:33] [Client thread/INFO]: Stopping!
+[03:01:43] [main/INFO]: Setting user: Player567
+[03:01:44] [Client thread/INFO]: LWJGL Version: 2.9.1
+[03:01:48] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:01:49] [Sound Library Loader/INFO]: Sound engine started
+[03:01:51] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:01:51] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:01:51] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:01:51] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:01:52] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:01:53] [Sound Library Loader/INFO]: Sound engine started
+[03:01:56] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[03:01:56] [Server thread/INFO]: Generating keypair
+[03:01:56] [Server thread/INFO]: Preparing start region for level 0
+[03:01:57] [Server thread/INFO]: Changing view distance to 12, from 10
+[03:01:57] [Server thread/INFO]: Player567[local:E:b8f04937] logged in with entity id 142 at (1045.4313515982415, 70.0, 715.2016480558422)
+[03:01:57] [Server thread/INFO]: Player567 joined the game
+[03:02:03] [Server thread/INFO]: [Player567: Set the time to 0]
+[03:02:03] [Client thread/INFO]: [CHAT] Set the time to 0
+[03:02:10] [Client thread/INFO]: [CHAT] commandBlockOutput, doDaylightCycle, doFireTick, doMobLoot, doMobSpawning, doTileDrops, keepInventory, mobGriefing, naturalRegeneration
+[03:02:11] [Client thread/INFO]: [CHAT] commandBlockOutput, doDaylightCycle, doFireTick, doMobLoot, doMobSpawning, doTileDrops, keepInventory, mobGriefing, naturalRegeneration
+[03:02:12] [Client thread/INFO]: [CHAT] true, false
+[03:02:13] [Client thread/INFO]: [CHAT] true, false
+[03:02:13] [Server thread/INFO]: [Player567: Game rule has been updated]
+[03:02:13] [Client thread/INFO]: [CHAT] Game rule has been updated
+[03:02:19] [Server thread/INFO]: [Player567: Set the time to 5000]
+[03:02:19] [Client thread/INFO]: [CHAT] Set the time to 5000
+[03:02:36] [Server thread/INFO]: Saving and pausing game...
+[03:02:36] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:02:36] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:02:36] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:02:37] [Server thread/INFO]: Stopping server
+[03:02:37] [Server thread/INFO]: Saving players
+[03:02:37] [Server thread/INFO]: Saving worlds
+[03:02:37] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:02:37] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:02:37] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:02:38] [Client thread/INFO]: Stopping!
+[03:05:55] [main/INFO]: Setting user: Player392
+[03:05:56] [Client thread/INFO]: LWJGL Version: 2.9.1
+[03:06:00] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:06:01] [Sound Library Loader/INFO]: Sound engine started
+[03:06:03] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:06:03] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:06:03] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:06:03] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:06:04] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:06:04] [Sound Library Loader/INFO]: Sound engine started
+[03:06:08] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[03:06:08] [Server thread/INFO]: Generating keypair
+[03:06:08] [Server thread/INFO]: Preparing start region for level 0
+[03:06:10] [Server thread/INFO]: Changing view distance to 12, from 10
+[03:06:10] [Server thread/INFO]: Player392[local:E:7b71a50e] logged in with entity id 142 at (1047.0718444041195, 70.0, 714.4546560088252)
+[03:06:10] [Server thread/INFO]: Player392 joined the game
+[03:06:57] [Server thread/INFO]: Saving and pausing game...
+[03:06:57] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:06:57] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:06:57] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:06:58] [Server thread/INFO]: Stopping server
+[03:06:58] [Server thread/INFO]: Saving players
+[03:06:58] [Server thread/INFO]: Saving worlds
+[03:06:58] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:06:58] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:06:58] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:07:00] [Client thread/INFO]: Stopping!
+[03:08:11] [main/INFO]: Setting user: Player786
+[03:08:13] [Client thread/INFO]: LWJGL Version: 2.9.1
+[03:08:17] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:08:18] [Sound Library Loader/INFO]: Sound engine started
+[03:08:20] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:08:20] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:08:20] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:08:20] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:08:20] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:08:21] [Sound Library Loader/INFO]: Sound engine started
+[03:08:34] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[03:08:34] [Server thread/INFO]: Generating keypair
+[03:08:34] [Server thread/INFO]: Preparing start region for level 0
+[03:08:35] [Server thread/INFO]: Changing view distance to 12, from 10
+[03:08:36] [Server thread/INFO]: Player786[local:E:dafd7816] logged in with entity id 142 at (1046.663079537122, 69.0, 715.386730357878)
+[03:08:36] [Server thread/INFO]: Player786 joined the game
+[03:08:48] [Server thread/INFO]: Saving and pausing game...
+[03:08:48] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:08:48] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:08:48] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:10:59] [Server thread/INFO]: Saving and pausing game...
+[03:10:59] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:10:59] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:10:59] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:11:00] [Server thread/INFO]: Stopping server
+[03:11:00] [Server thread/INFO]: Saving players
+[03:11:00] [Server thread/INFO]: Saving worlds
+[03:11:00] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:11:00] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:11:00] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:11:02] [Client thread/INFO]: Stopping!
+[03:14:45] [main/INFO]: Setting user: Player984
+[03:14:47] [Client thread/INFO]: LWJGL Version: 2.9.1
+[03:14:52] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:14:52] [Sound Library Loader/INFO]: Sound engine started
+[03:14:54] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:14:54] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:14:54] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:14:55] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:14:55] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:14:56] [Sound Library Loader/INFO]: Sound engine started
+[03:14:59] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[03:14:59] [Server thread/INFO]: Generating keypair
+[03:14:59] [Server thread/INFO]: Preparing start region for level 0
+[03:15:01] [Server thread/INFO]: Changing view distance to 12, from 10
+[03:15:01] [Server thread/INFO]: Player984[local:E:18bd1f95] logged in with entity id 142 at (1046.300000011921, 69.0, 716.5734475623615)
+[03:15:01] [Server thread/INFO]: Player984 joined the game
+[03:15:37] [Server thread/INFO]: Saving and pausing game...
+[03:15:37] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:15:38] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:15:38] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:15:49] [Server thread/INFO]: Saving and pausing game...
+[03:15:49] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:15:49] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:15:49] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:15:49] [Server thread/INFO]: Stopping server
+[03:15:49] [Server thread/INFO]: Saving players
+[03:15:49] [Server thread/INFO]: Saving worlds
+[03:15:49] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:15:49] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:15:49] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:15:51] [Client thread/INFO]: Stopping!
+[03:15:58] [main/INFO]: Setting user: Player365
+[03:15:59] [Client thread/INFO]: LWJGL Version: 2.9.1
+[03:16:02] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:16:03] [Sound Library Loader/INFO]: Sound engine started
+[03:16:04] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:16:04] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:16:04] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:16:05] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:16:05] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:16:06] [Sound Library Loader/INFO]: Sound engine started
+[03:16:09] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[03:16:09] [Server thread/INFO]: Generating keypair
+[03:16:09] [Server thread/INFO]: Preparing start region for level 0
+[03:16:10] [Server thread/INFO]: Changing view distance to 12, from 10
+[03:16:10] [Server thread/INFO]: Player365[local:E:ff26f4b6] logged in with entity id 142 at (1047.300000011921, 67.20000004768372, 714.6342308739339)
+[03:16:10] [Server thread/INFO]: Player365 joined the game
+[03:16:17] [Server thread/INFO]: Saving and pausing game...
+[03:16:17] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:16:17] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:16:17] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:17:02] [Server thread/INFO]: Saving and pausing game...
+[03:17:02] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:17:02] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:17:02] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:17:57] [Server thread/INFO]: Saving and pausing game...
+[03:17:57] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:17:57] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:17:57] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:17:58] [Server thread/INFO]: Stopping server
+[03:17:58] [Server thread/INFO]: Saving players
+[03:17:58] [Server thread/INFO]: Saving worlds
+[03:17:58] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:17:58] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:17:58] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:17:58] [Client thread/INFO]: Stopping!
+[03:18:20] [main/INFO]: Setting user: Player951
+[03:18:22] [Client thread/INFO]: LWJGL Version: 2.9.1
+[03:18:27] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:18:27] [Sound Library Loader/INFO]: Sound engine started
+[03:18:29] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:18:29] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:18:29] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:18:30] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:18:30] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:18:30] [Sound Library Loader/INFO]: Sound engine started
+[03:18:33] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[03:18:33] [Server thread/INFO]: Generating keypair
+[03:18:34] [Server thread/INFO]: Preparing start region for level 0
+[03:18:34] [Server thread/INFO]: Changing view distance to 12, from 10
+[03:18:35] [Server thread/INFO]: Player951[local:E:e14b7d5f] logged in with entity id 142 at (1048.7927165602173, 69.0, 718.1723660824691)
+[03:18:35] [Server thread/INFO]: Player951 joined the game
+[03:18:54] [Server thread/INFO]: Saving and pausing game...
+[03:18:54] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:18:54] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:18:54] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:19:40] [Server thread/INFO]: Saving and pausing game...
+[03:19:40] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:19:40] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:19:40] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:20:48] [Server thread/INFO]: Player951 has just earned the achievement [Taking Inventory]
+[03:20:48] [Client thread/INFO]: [CHAT] Player951 has just earned the achievement [Taking Inventory]
+[03:21:07] [Server thread/INFO]: Saving and pausing game...
+[03:21:07] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:21:07] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:21:07] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:22:50] [Server thread/INFO]: Saving and pausing game...
+[03:22:50] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:22:50] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:22:50] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:22:51] [Server thread/INFO]: Stopping server
+[03:22:51] [Server thread/INFO]: Saving players
+[03:22:51] [Server thread/INFO]: Saving worlds
+[03:22:51] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:22:51] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:22:51] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:22:52] [Client thread/INFO]: Stopping!
+[03:38:03] [main/INFO]: Setting user: Player733
+[03:38:04] [Client thread/INFO]: LWJGL Version: 2.9.1
+[03:38:08] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:38:09] [Sound Library Loader/INFO]: Sound engine started
+[03:38:10] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:38:10] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:38:11] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[03:38:11] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[03:38:11] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[03:38:12] [Sound Library Loader/INFO]: Sound engine started
+[03:38:20] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[03:38:20] [Server thread/INFO]: Generating keypair
+[03:38:20] [Server thread/INFO]: Preparing start region for level 0
+[03:38:21] [Server thread/INFO]: Changing view distance to 12, from 10
+[03:38:21] [Server thread/INFO]: Player733[local:E:bdb4e65a] logged in with entity id 142 at (1047.700305510105, 70.0, 714.2245324218367)
+[03:38:21] [Server thread/INFO]: Player733 joined the game
+[03:38:35] [Server thread/INFO]: Saving and pausing game...
+[03:38:35] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:38:35] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:38:35] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:41:05] [Server thread/INFO]: Saving and pausing game...
+[03:41:05] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:41:05] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:41:05] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:41:06] [Server thread/INFO]: Stopping server
+[03:41:06] [Server thread/INFO]: Saving players
+[03:41:06] [Server thread/INFO]: Saving worlds
+[03:41:06] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[03:41:06] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[03:41:06] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[03:41:07] [Client thread/INFO]: Stopping!
+[04:22:16] [main/INFO]: Setting user: Player12
+[04:22:17] [Client thread/INFO]: LWJGL Version: 2.9.1
+[04:22:21] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:22:22] [Sound Library Loader/INFO]: Sound engine started
+[04:22:23] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:22:23] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:22:24] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:22:24] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:22:24] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:22:25] [Sound Library Loader/INFO]: Sound engine started
+[04:22:27] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[04:22:27] [Server thread/INFO]: Generating keypair
+[04:22:27] [Server thread/INFO]: Preparing start region for level 0
+[04:22:28] [Server thread/INFO]: Changing view distance to 12, from 10
+[04:22:29] [Server thread/INFO]: Player12[local:E:319473ae] logged in with entity id 142 at (1047.3875870194715, 69.6875, 713.127418251976)
+[04:22:29] [Server thread/INFO]: Player12 joined the game
+[04:23:09] [Server thread/INFO]: Saving and pausing game...
+[04:23:09] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:23:09] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:23:09] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:23:10] [Server thread/INFO]: Stopping server
+[04:23:10] [Server thread/INFO]: Saving players
+[04:23:10] [Server thread/INFO]: Saving worlds
+[04:23:10] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:23:10] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:23:10] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:23:11] [Client thread/INFO]: Stopping!
+[04:23:39] [main/INFO]: Setting user: Player74
+[04:23:41] [Client thread/INFO]: LWJGL Version: 2.9.1
+[04:23:45] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:23:45] [Sound Library Loader/INFO]: Sound engine started
+[04:23:47] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:23:47] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:23:47] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:23:47] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:23:47] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:23:48] [Sound Library Loader/INFO]: Sound engine started
+[04:23:51] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[04:23:51] [Server thread/INFO]: Generating keypair
+[04:23:51] [Server thread/INFO]: Preparing start region for level 0
+[04:23:52] [Server thread/INFO]: Changing view distance to 12, from 10
+[04:23:52] [Server thread/INFO]: Player74[local:E:1b360436] logged in with entity id 142 at (1046.0664524281276, 69.0, 716.354987573999)
+[04:23:52] [Server thread/INFO]: Player74 joined the game
+[04:23:55] [Server thread/INFO]: Stopping server
+[04:23:55] [Server thread/INFO]: Saving players
+[04:23:55] [Server thread/INFO]: Saving worlds
+[04:23:55] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:23:55] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:23:55] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:23:55] [Client thread/FATAL]: Unreported exception thrown!
+java.lang.NullPointerException
+	at net.minecraft.client.renderer.RenderGlobal.drawSelectionBox(RenderGlobal.java:1778) ~[RenderGlobal.class:?]
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1332) ~[EntityRenderer.class:?]
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1087) ~[EntityRenderer.class:?]
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1067) ~[Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:164) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_60]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.11.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source) [start/:?]
+	at GradleStart.main(Unknown Source) [start/:?]
+[04:25:37] [main/INFO]: Setting user: Player348
+[04:25:39] [Client thread/INFO]: LWJGL Version: 2.9.1
+[04:25:44] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:25:44] [Sound Library Loader/INFO]: Sound engine started
+[04:25:46] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:25:46] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:25:46] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:25:47] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:25:47] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:25:48] [Sound Library Loader/INFO]: Sound engine started
+[04:25:54] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[04:25:54] [Server thread/INFO]: Generating keypair
+[04:25:54] [Server thread/INFO]: Preparing start region for level 0
+[04:25:55] [Server thread/INFO]: Changing view distance to 12, from 10
+[04:25:55] [Server thread/INFO]: Player348[local:E:46eabd5d] logged in with entity id 142 at (1045.9684527883185, 69.0, 716.3552506513514)
+[04:25:55] [Server thread/INFO]: Player348 joined the game
+[04:26:15] [Server thread/INFO]: Saving and pausing game...
+[04:26:15] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:26:15] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:26:15] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:26:15] [Server thread/INFO]: Stopping server
+[04:26:15] [Server thread/INFO]: Saving players
+[04:26:15] [Server thread/INFO]: Saving worlds
+[04:26:15] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:26:15] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:26:15] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:26:17] [Client thread/INFO]: Stopping!
+[04:26:47] [main/INFO]: Setting user: Player121
+[04:26:48] [Client thread/INFO]: LWJGL Version: 2.9.1
+[04:26:52] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:26:52] [Sound Library Loader/INFO]: Sound engine started
+[04:26:54] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:26:54] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:26:54] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:26:54] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:26:54] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:26:55] [Sound Library Loader/INFO]: Sound engine started
+[04:26:58] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[04:26:58] [Server thread/INFO]: Generating keypair
+[04:26:58] [Server thread/INFO]: Preparing start region for level 0
+[04:26:59] [Server thread/INFO]: Changing view distance to 12, from 10
+[04:26:59] [Server thread/INFO]: Player121[local:E:31d96f91] logged in with entity id 142 at (1045.9075224214985, 69.0, 715.2232706436337)
+[04:26:59] [Server thread/INFO]: Player121 joined the game
+[04:27:07] [Server thread/INFO]: Saving and pausing game...
+[04:27:07] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:27:07] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:27:07] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:27:08] [Server thread/INFO]: Stopping server
+[04:27:08] [Server thread/INFO]: Saving players
+[04:27:08] [Server thread/INFO]: Saving worlds
+[04:27:08] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:27:08] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:27:08] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:27:09] [Client thread/INFO]: Stopping!
+[04:27:33] [main/INFO]: Setting user: Player317
+[04:27:34] [Client thread/INFO]: LWJGL Version: 2.9.1
+[04:27:38] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:27:39] [Sound Library Loader/INFO]: Sound engine started
+[04:27:40] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:27:40] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:27:40] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:27:40] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:27:41] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:27:41] [Sound Library Loader/INFO]: Sound engine started
+[04:27:44] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[04:27:44] [Server thread/INFO]: Generating keypair
+[04:27:44] [Server thread/INFO]: Preparing start region for level 0
+[04:27:45] [Server thread/INFO]: Changing view distance to 12, from 10
+[04:27:45] [Server thread/INFO]: Player317[local:E:5a1b1766] logged in with entity id 142 at (1045.9075224214985, 69.0, 715.2232706436337)
+[04:27:45] [Server thread/INFO]: Player317 joined the game
+[04:27:59] [Server thread/INFO]: Saving and pausing game...
+[04:27:59] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:27:59] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:27:59] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:28:00] [Server thread/INFO]: Stopping server
+[04:28:00] [Server thread/INFO]: Saving players
+[04:28:00] [Server thread/INFO]: Saving worlds
+[04:28:00] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:28:00] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:28:00] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:28:01] [Client thread/INFO]: Stopping!
+[04:28:29] [main/INFO]: Setting user: Player497
+[04:28:30] [Client thread/INFO]: LWJGL Version: 2.9.1
+[04:28:33] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:28:34] [Sound Library Loader/INFO]: Sound engine started
+[04:28:35] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:28:35] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:28:36] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:28:36] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:28:36] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:28:37] [Sound Library Loader/INFO]: Sound engine started
+[04:28:39] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[04:28:39] [Server thread/INFO]: Generating keypair
+[04:28:39] [Server thread/INFO]: Preparing start region for level 0
+[04:28:40] [Server thread/INFO]: Changing view distance to 12, from 10
+[04:28:40] [Server thread/INFO]: Player497[local:E:9fa8f8f8] logged in with entity id 142 at (1044.0154544881277, 69.0, 715.3473810457058)
+[04:28:40] [Server thread/INFO]: Player497 joined the game
+[04:28:52] [Server thread/INFO]: Saving and pausing game...
+[04:28:53] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:28:53] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:28:53] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:28:53] [Server thread/INFO]: Stopping server
+[04:28:53] [Server thread/INFO]: Saving players
+[04:28:53] [Server thread/INFO]: Saving worlds
+[04:28:53] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:28:53] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:28:53] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:28:54] [Client thread/INFO]: Stopping!
+[04:37:02] [main/INFO]: Setting user: Player696
+[04:37:03] [Client thread/INFO]: LWJGL Version: 2.9.1
+[04:37:06] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:37:07] [Sound Library Loader/INFO]: Sound engine started
+[04:37:08] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:37:08] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:37:09] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:37:09] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:37:09] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:37:10] [Sound Library Loader/INFO]: Sound engine started
+[04:37:13] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[04:37:13] [Server thread/INFO]: Generating keypair
+[04:37:13] [Server thread/INFO]: Preparing start region for level 0
+[04:37:14] [Server thread/INFO]: Changing view distance to 12, from 10
+[04:37:14] [Server thread/INFO]: Player696[local:E:315d72c4] logged in with entity id 142 at (1043.6103619456255, 69.0, 715.2323547131143)
+[04:37:14] [Server thread/INFO]: Player696 joined the game
+[04:37:56] [Server thread/INFO]: Saving and pausing game...
+[04:37:56] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:37:56] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:37:56] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:37:57] [Server thread/INFO]: Stopping server
+[04:37:57] [Server thread/INFO]: Saving players
+[04:37:57] [Server thread/INFO]: Saving worlds
+[04:37:57] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:37:57] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:37:57] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:37:58] [Client thread/INFO]: Stopping!
+[04:40:18] [main/INFO]: Setting user: Player896
+[04:40:19] [Client thread/INFO]: LWJGL Version: 2.9.1
+[04:40:22] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:40:23] [Sound Library Loader/INFO]: Sound engine started
+[04:40:24] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:40:25] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:40:25] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:40:25] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:40:25] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:40:26] [Sound Library Loader/INFO]: Sound engine started
+[04:40:31] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[04:40:31] [Server thread/INFO]: Generating keypair
+[04:40:31] [Server thread/INFO]: Preparing start region for level 0
+[04:40:32] [Server thread/INFO]: Changing view distance to 12, from 10
+[04:40:32] [Server thread/INFO]: Player896[local:E:fd43b063] logged in with entity id 142 at (1047.5926667810365, 69.0, 713.23417279296)
+[04:40:32] [Server thread/INFO]: Player896 joined the game
+[04:40:39] [Server thread/INFO]: Saving and pausing game...
+[04:40:39] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:40:39] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:40:39] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:40:40] [Server thread/INFO]: Stopping server
+[04:40:40] [Server thread/INFO]: Saving players
+[04:40:40] [Server thread/INFO]: Saving worlds
+[04:40:40] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[04:40:40] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[04:40:40] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[04:40:41] [Client thread/INFO]: Stopping!

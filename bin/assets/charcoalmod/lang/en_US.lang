@@ -1,0 +1,58 @@
+item.charcoal_helmet.name=Charcoal Helmet
+item.charcoal_chestplate.name=Charcoal Chestplate
+item.charcoal_leggings.name=Charcoal Leggings
+item.charcoal_boots.name=Charcoal Boots
+
+item.bound_charcoal_helmet.name=Bound Charcoal Helmet
+item.bound_charcoal_chestplate.name=Bound Charcoal Chestplate
+item.bound_charcoal_leggings.name=Bound Charcoal Leggings
+item.bound_charcoal_boots.name=Bound Charcoal Boots
+
+item.reinforced_charcoal_helmet.name=Reinforced Charcoal Helmet
+item.reinforced_charcoal_chestplate.name=Reinforced Charcoal Chestplate
+item.reinforced_charcoal_leggings.name=Reinforced Charcoal Leggings
+item.reinforced_charcoal_boots.name=Reinforced Charcoal Boots
+
+item.bound_charcoal.name=Bound Charcoal
+item.hi_energy_charcoal.name=Hi-Energy Charcoal
+item.energized_charcoal.name=Energized Charcoal
+item.smore.name=Smore
+item.delicious_hot_smore.name=Delicious Hot Smore
+item.pliable_charcoal.name=Pliable Charcoal
+item.plastic_sheet.name=Plastic Sheet
+item.voltage_regulator_circuit.name=Voltage Regulator Circuit
+item.wand_handle.name=Charcoal Wand Handle
+item.charcoal_wand.name=Charcoal Wand
+item.charcoal_water_wand.name=Charcoal Water Wand
+item.charcoal_fire_wand.name=Charcoal Fire Wand
+item.charcoal_teleport_wand.name=Charcoal Teleport Wand
+item.charcoal_plant_wand.name=Charcoal Plant Wand
+item.charcoal_air_wand.name=Charcoal Air Wand
+
+item.wand_crystal_0.name=Charcoal Wand Crystal
+item.wand_crystal_1.name=Water Wand Crystal
+item.wand_crystal_2.name=Fire Wand Crystal
+item.wand_crystal_3.name=Teleport Wand Crystal
+item.wand_crystal_4.name=Plant Wand Crystal
+item.wand_crystal_5.name=Air Wand Crystal
+
+tile.charcoal_block.name=Charcoal Block
+tile.bound_charcoal_block.name=Bound Charcoal Block
+tile.reinforced_charcoal_block.name=Reinforced Charcoal Block
+tile.charred_log.name=Charred Log
+tile.charred_leaves.name=Charred Leaves
+tile.charred_sapling.name=Charred Sapling
+tile.charred_sapling.name=Charred Sapling
+tile.leaf_shield.name=Leaf Shield
+tile.charger.name=Char-ger
+tile.valid_charger.name=Char-ger Frame
+tile.charge_relay.name=Charge Relay
+tile.ender_chunk.name=Ender Chunk
+tile.stratospheric_air.name=Stratospheric Air
+tile.battery_0.name=Charge Storage Unit MkI
+tile.battery_1.name=Charge Storage Unit MkII
+tile.battery_2.name=Charge Storage Unit MkIII
+tile.smore_ore.name=Smore Ore
+tile.ash_pile.name=Ash Pile
+tile.basic_wire2.name=Charcoal Energy Wire
+tile.item_detector.name=Item Detector

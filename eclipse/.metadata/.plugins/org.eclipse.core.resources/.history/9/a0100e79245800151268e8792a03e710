@@ -1,0 +1,213 @@
+package uk.co.lastresorts.charcoalmod.entities.particles;
+
+import static org.lwjgl.opengl.GL11.GL_BLEND;
+import static org.lwjgl.opengl.GL11.GL_GREATER;
+import static org.lwjgl.opengl.GL11.GL_ONE_MINUS_SRC_ALPHA;
+import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
+import static org.lwjgl.opengl.GL11.glAlphaFunc;
+import static org.lwjgl.opengl.GL11.glBlendFunc;
+import static org.lwjgl.opengl.GL11.glDepthMask;
+import static org.lwjgl.opengl.GL11.glDisable;
+import static org.lwjgl.opengl.GL11.glEnable;
+
+import java.util.List;
+
+import akka.japi.Effect;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.particle.EntityFX;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import uk.co.lastresorts.charcoalmod.CharcoalMod;
+
+public class EntityCharcoalWaterFX extends Entity {
+
+	private static final ResourceLocation texture = new ResourceLocation(CharcoalMod.MODID, "textures/particle/charcoal_dust.png");
+	
+	
+	protected int particleTextureIndexX;
+    protected int particleTextureIndexY;
+    protected float particleTextureJitterX;
+    protected float particleTextureJitterY;
+    protected int particleAge;
+    protected int particleMaxAge;
+    protected float particleScale;
+    protected float particleGravity;
+	public static double interpPosX;
+    public static double interpPosY;
+    public static double interpPosZ;
+    private static final String __OBFID = "CL_00000914";
+    public String playerId;
+	
+	public EntityCharcoalWaterFX(World world) {
+		super(world);
+        this.setSize(0.2F, 0.2F);
+        this.yOffset = this.height / 2.0F;
+        this.particleTextureJitterX = this.rand.nextFloat() * 3.0F;
+        this.particleTextureJitterY = this.rand.nextFloat() * 3.0F;
+        this.particleScale = (this.rand.nextFloat() * 0.5F + 0.5F) * 2.0F;
+        this.particleMaxAge = (int)(4.0F / (this.rand.nextFloat() * 0.9F + 0.1F));
+        this.particleAge = 0;
+		setMaxAge(20);
+		setGravity(0F);
+		
+	}
+	
+	public EntityCharcoalWaterFX(World world, double x, double y, double z, EntityPlayer player) {
+		this(world);
+		playerId = player.getDisplayName();
+		this.setPosition(x, y, z);
+        this.lastTickPosX = x;
+        this.lastTickPosY = y;
+        this.lastTickPosZ = z;
+		
+	}
+	
+	//Not used by wand
+	/*
+	@Override
+	public void renderParticle(Tessellator tesselator, float partialTicks, float par3, float par4, float par5, float par6, float par7) {
+		Minecraft.getMinecraft().renderEngine.bindTexture(texture);
+		glDepthMask(false);
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		glAlphaFunc(GL_GREATER, 0.003921569F);
+		tesselator.startDrawingQuads();
+		tesselator.setBrightness(getBrightnessForRender(partialTicks));
+		float scale = 0.1F*particleScale;
+		float x = (float)(prevPosX + (posX-prevPosX) * partialTicks - interpPosX);
+		float y = (float)(prevPosY + (posY-prevPosY) * partialTicks - interpPosY);
+		float z = (float)(prevPosZ + (posZ-prevPosZ) * partialTicks - interpPosZ);
+		tesselator.addVertexWithUV(x-par3*scale-par6*scale, y-par4*scale, z-par5*scale-par7*scale, 0, 0);
+		tesselator.addVertexWithUV(x-par3*scale+par6*scale, y+par4*scale, z-par5*scale+par7*scale, 1, 0);
+		tesselator.addVertexWithUV(x+par3*scale+par6*scale, y+par4*scale, z+par5*scale+par7*scale, 1, 1);
+		tesselator.addVertexWithUV(x+par3*scale-par6*scale, y-par4*scale, z+par5*scale-par7*scale, 0, 1);
+		tesselator.draw();
+		glDisable(GL_BLEND);
+		glDepthMask(true);
+		glAlphaFunc(GL_GREATER, 0.1F);
+	}
+	*/
+	
+	public int getFXLayer() {
+		return 0;
+	}
+	
+	public EntityCharcoalWaterFX setMaxAge(int maxAge) {
+		particleMaxAge = maxAge;
+		return this;
+	}
+	
+	public EntityCharcoalWaterFX setGravity(float gravity) {
+		particleGravity = gravity;
+		return this;
+	}
+	
+	public EntityCharcoalWaterFX setScale(float scale) {
+		particleScale = scale;
+		return this;
+	}
+	
+	@Override
+	public void onUpdate() {
+		this.prevPosX = this.posX;
+        this.prevPosY = this.posY;
+        this.prevPosZ = this.posZ;
+
+        if (this.particleAge++ >= this.particleMaxAge)
+        {
+        	if(worldObj.isRemote) {worldObj.spawnParticle("explode", posX, posY, posZ, 0.0D, 0.0D, 0.0D);}
+            this.setDead();
+        }
+
+        //this.motionY -= 0.04D * (double)this.particleGravity;
+        //this.moveEntity(this.motionX, this.motionY, this.motionZ);
+        this.posX = posX + motionX;
+        this.posY = posY + motionY;
+        this.posZ = posZ + motionZ;
+        this.motionX *= 0.9800000190734863D;
+        this.motionY *= 0.9800000190734863D;
+        this.motionZ *= 0.9800000190734863D;
+
+        if (this.onGround)
+        {
+            this.motionX *= 0.699999988079071D;
+            this.motionZ *= 0.699999988079071D;
+        }
+		
+        //Apply poison to all living entities within the projectile's bounding box, as long as they aren't the player who shot them.
+	        List list = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox.addCoord(this.motionX, this.motionY, this.motionZ).expand(1.0D, 1.0D, 1.0D));
+	
+	        for (int i = 0; i < list.size(); ++i)
+	        {
+	            Entity entity1 = (Entity)list.get(i);
+	            if(entity1.canBeCollidedWith() && entity1 instanceof EntityLivingBase) {
+	            	EntityLivingBase thing = (EntityLivingBase)entity1;
+	            	if(entity1 instanceof EntityPlayer && ((EntityPlayer) entity1).getDisplayName() == playerId) {
+	            }else{
+	            	if(!worldObj.isRemote) thing.addPotionEffect(new PotionEffect(Potion.poison.id, 100));
+	            }
+	            }
+	        }
+		
+        if(worldObj.isRemote) {
+        	worldObj.spawnParticle("splash", posX, posY, posZ, 0.0D, 0.0D, 0.0D);
+        }
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+    public boolean isInvisibleToPlayer(EntityPlayer player)
+    {
+        return true;
+    }
+	
+	public boolean isInvisible()
+    {
+        return true;
+    }
+	
+	protected boolean canTriggerWalking()
+    {
+        return false;
+    }
+	
+	/*
+	public EntityCharcoalWaterFX multiplyVelocity(float p_70543_1_)
+    {
+        this.motionX *= (double)p_70543_1_;
+        this.motionY = (this.motionY - 0.10000000149011612D) * (double)p_70543_1_ + 0.10000000149011612D;
+        this.motionZ *= (double)p_70543_1_;
+        return this;
+    }
+    */
+
+    public EntityCharcoalWaterFX multipleParticleScaleBy(float p_70541_1_)
+    {
+        this.setSize(0.2F * p_70541_1_, 0.2F * p_70541_1_);
+        this.particleScale *= p_70541_1_;
+        return this;
+    }
+
+	@Override
+	protected void entityInit() {
+	}
+
+	@Override
+	protected void readEntityFromNBT(NBTTagCompound nbttagcompound) {
+		playerId = nbttagcompound.getString("playerName");
+	}
+
+	@Override
+	protected void writeEntityToNBT(NBTTagCompound nbttagcompound) {
+		nbttagcompound.setString("playerName", playerId);
+	}
+}

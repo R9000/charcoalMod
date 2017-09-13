@@ -1,0 +1,33 @@
+1486135171568	Copy compilation unit
+1486138609189	Copy compilation unit
+1486138989096	Copy compilation unit
+1486139253599	Copy compilation unit
+1486139544876	Copy compilation unit
+1486141744080	Rename local variable 'p_75144_2_'
+1486141763096	Rename local variable 'p_75144_3_'
+1486141792870	Rename local variable 'p_75144_4_'
+1486141834430	Rename local variable 'x'
+1486141918106	Rename local variable 'y'
+1486142016708	Rename local variable 'slotNo'
+1486143122111	Rename local variable 'player'
+1486145674337	Rename local variable 'p_75144_4_'
+1486145736422	Rename local variable 'p_75144_1_'
+1486148596858	Rename local variable 'p_149689_1_'
+1486148617891	Rename local variable 'p_149689_5_'
+1486148630915	Rename local variable 'p_149689_6_'
+1486148641440	Rename local variable 'p_149689_2_'
+1486148648457	Rename local variable 'p_149689_3_'
+1486148654979	Rename local variable 'p_149689_4_'
+1486148667504	Rename local variable 'p_150071_0_'
+1486148676023	Rename local variable 'p_150071_1_'
+1486148682542	Rename local variable 'p_150071_2_'
+1486148688554	Rename local variable 'p_150071_3_'
+1486148694573	Rename local variable 'p_150071_4_'
+1486149367279	Rename local variable 'p_149691_2_'
+1486149640207	Rename local variable 'p_149691_1_'
+1486161974813	Rename local variable 'itemstack3'
+1486161988338	Rename local variable 'itemstack4'
+1486162480649	Rename local variable 'slot2'
+1486181780442	Delete element
+1486182146429	Rename type 'ButtonPacket'
+1486182164644	Rename type 'ButtonPacketHandler'

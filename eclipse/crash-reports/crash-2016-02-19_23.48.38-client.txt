@@ -1,0 +1,119 @@
+---- Minecraft Crash Report ----
+// I just don't know what went wrong :(
+
+Time: 19/02/16 23:48
+Description: Rendering item
+
+java.lang.NullPointerException: Rendering item
+	at uk.co.lastresorts.charcoalmod.client.RenderCharcoalWire.renderItem(RenderCharcoalWire.java:41)
+	at net.minecraftforge.client.ForgeHooksClient.renderInventoryItem(ForgeHooksClient.java:183)
+	at net.minecraft.client.renderer.entity.RenderItem.renderItemAndEffectIntoGUI(RenderItem.java:583)
+	at net.minecraft.client.gui.inventory.GuiContainer.func_146977_a(GuiContainer.java:289)
+	at net.minecraft.client.gui.inventory.GuiContainer.drawScreen(GuiContainer.java:114)
+	at net.minecraft.client.renderer.InventoryEffectRenderer.drawScreen(InventoryEffectRenderer.java:44)
+	at net.minecraft.client.gui.inventory.GuiContainerCreative.drawScreen(GuiContainerCreative.java:673)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1137)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1067)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at uk.co.lastresorts.charcoalmod.client.RenderCharcoalWire.renderItem(RenderCharcoalWire.java:41)
+	at net.minecraftforge.client.ForgeHooksClient.renderInventoryItem(ForgeHooksClient.java:183)
+
+-- Item being rendered --
+Details:
+	Item Type: net.minecraft.item.ItemBlock@678db8be
+	Item Aux: 0
+	Item NBT: null
+	Item Foil: false
+Stacktrace:
+	at net.minecraft.client.renderer.entity.RenderItem.renderItemAndEffectIntoGUI(RenderItem.java:583)
+	at net.minecraft.client.gui.inventory.GuiContainer.func_146977_a(GuiContainer.java:289)
+	at net.minecraft.client.gui.inventory.GuiContainer.drawScreen(GuiContainer.java:114)
+	at net.minecraft.client.renderer.InventoryEffectRenderer.drawScreen(InventoryEffectRenderer.java:44)
+	at net.minecraft.client.gui.inventory.GuiContainerCreative.drawScreen(GuiContainerCreative.java:673)
+
+-- Screen render details --
+Details:
+	Screen name: net.minecraft.client.gui.inventory.GuiContainerCreative
+	Mouse location: Scaled: (252, 126). Absolute: (505, 227)
+	Screen size: Scaled: (427, 240). Absolute: (854, 480). Scale factor of 2
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player719'/162, l='MpServer', x=1089.66, y=80.62, z=-646.39]]
+	Chunk stats: MultiplayerChunkCache: 625, 625
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (52,64,252), Chunk: (at 4,4,12 in 3,15; contains blocks 48,0,240 to 63,255,255), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 55916 game time, 4922 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 80 total; [EntityClientPlayerMP['Player719'/162, l='MpServer', x=1089.66, y=80.62, z=-646.39], EntityBat['Bat'/164, l='MpServer', x=1082.66, y=24.00, z=-653.69], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/165, l='MpServer', x=1093.28, y=54.18, z=-667.31], EntityBat['Bat'/166, l='MpServer', x=1092.56, y=54.10, z=-668.75], EntityXPOrb['Experience Orb'/294, l='MpServer', x=1047.34, y=68.25, z=-776.25], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/167, l='MpServer', x=1075.28, y=34.06, z=-666.68], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/168, l='MpServer', x=1086.69, y=71.70, z=-666.31], EntityBat['Bat'/169, l='MpServer', x=1092.44, y=16.54, z=-676.34], EntityBat['Bat'/170, l='MpServer', x=1101.44, y=19.32, z=-665.72], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/171, l='MpServer', x=1113.28, y=70.00, z=-682.22], EntityBat['Bat'/172, l='MpServer', x=1085.28, y=17.10, z=-675.31], EntityBat['Bat'/173, l='MpServer', x=1079.75, y=36.10, z=-674.25], EntityBat['Bat'/174, l='MpServer', x=1088.53, y=58.98, z=-677.50], EntityBat['Bat'/175, l='MpServer', x=1085.22, y=58.00, z=-675.13], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/431, l='MpServer', x=1011.30, y=66.21, z=-648.81], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/176, l='MpServer', x=1080.47, y=71.00, z=-662.03], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/432, l='MpServer', x=1012.82, y=66.00, z=-647.53], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/177, l='MpServer', x=1092.91, y=70.00, z=-675.81], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/178, l='MpServer', x=1070.69, y=19.14, z=-674.31], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/179, l='MpServer', x=1057.91, y=74.45, z=-665.72], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/180, l='MpServer', x=1051.34, y=68.62, z=-679.75], EntityBat['Bat'/181, l='MpServer', x=1092.88, y=56.29, z=-701.59], EntityBat['Bat'/182, l='MpServer', x=1081.94, y=57.20, z=-687.13], EntityBat['Bat'/183, l='MpServer', x=1103.63, y=55.68, z=-695.53], EntityBat['Bat'/184, l='MpServer', x=1084.44, y=59.10, z=-698.66], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/440, l='MpServer', x=1010.33, y=66.00, z=-648.94], EntityBat['Bat'/185, l='MpServer', x=1104.69, y=28.51, z=-684.28], EntityBat['Bat'/186, l='MpServer', x=1090.84, y=16.67, z=-673.38], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/187, l='MpServer', x=1116.25, y=65.00, z=-688.31], EntityItem['item.item.slimeball'/189, l='MpServer', x=1065.19, y=79.13, z=-601.88], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/190, l='MpServer', x=1055.28, y=19.00, z=-675.72], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/191, l='MpServer', x=1043.78, y=64.00, z=-685.66], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/192, l='MpServer', x=1050.78, y=65.00, z=-681.53], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/448, l='MpServer', x=1034.79, y=88.21, z=-593.25], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/193, l='MpServer', x=1046.50, y=64.00, z=-681.69], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/449, l='MpServer', x=1031.13, y=88.16, z=-593.70], EntityItem['item.item.slimeball'/194, l='MpServer', x=1047.88, y=64.13, z=-682.84], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/195, l='MpServer', x=1048.38, y=64.00, z=-682.16], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/196, l='MpServer', x=1067.50, y=67.00, z=-680.78], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/452, l='MpServer', x=1030.99, y=88.00, z=-595.88], EntitySquid['Squid'/197, l='MpServer', x=1145.50, y=60.00, z=-680.50], EntityBat['Bat'/198, l='MpServer', x=1097.34, y=32.60, z=-702.66], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/199, l='MpServer', x=1113.97, y=64.00, z=-584.56], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/200, l='MpServer', x=1096.31, y=66.00, z=-582.69], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/201, l='MpServer', x=1093.38, y=64.14, z=-575.45], EntityBat['Bat'/202, l='MpServer', x=1079.75, y=39.10, z=-713.25], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/203, l='MpServer', x=1083.19, y=65.29, z=-714.22], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/204, l='MpServer', x=1085.91, y=65.00, z=-731.06], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/210, l='MpServer', x=1119.72, y=65.08, z=-573.18], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/211, l='MpServer', x=1114.69, y=64.70, z=-584.44], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/212, l='MpServer', x=1053.56, y=62.33, z=-702.31], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/213, l='MpServer', x=1047.19, y=66.00, z=-694.34], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/215, l='MpServer', x=1031.59, y=67.00, z=-679.63], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/216, l='MpServer', x=1033.19, y=67.00, z=-679.63], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/217, l='MpServer', x=1060.03, y=64.06, z=-695.69], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/218, l='MpServer', x=1056.03, y=66.00, z=-702.00], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/219, l='MpServer', x=1077.94, y=64.18, z=-708.88], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/220, l='MpServer', x=1068.22, y=64.63, z=-721.69], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/221, l='MpServer', x=1067.59, y=64.00, z=-720.50], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/222, l='MpServer', x=1057.25, y=66.31, z=-703.63], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/223, l='MpServer', x=1032.28, y=64.00, z=-703.31], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/224, l='MpServer', x=1035.11, y=67.37, z=-689.90], EntityBat['Bat'/225, l='MpServer', x=1048.88, y=37.01, z=-717.34], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/226, l='MpServer', x=1053.19, y=61.00, z=-714.31], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/227, l='MpServer', x=1055.00, y=61.00, z=-713.25], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/228, l='MpServer', x=1051.28, y=62.00, z=-706.63], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/230, l='MpServer', x=1167.84, y=63.00, z=-657.47], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/236, l='MpServer', x=1166.53, y=69.00, z=-628.84], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/237, l='MpServer', x=1099.47, y=64.00, z=-577.59], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/238, l='MpServer', x=1099.00, y=65.45, z=-581.28], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/239, l='MpServer', x=1099.75, y=63.54, z=-576.38], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/240, l='MpServer', x=1116.19, y=65.00, z=-587.13], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/241, l='MpServer', x=1099.47, y=63.00, z=-573.72], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/242, l='MpServer', x=1072.38, y=64.00, z=-721.16], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/243, l='MpServer', x=1025.69, y=12.50, z=-716.16], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/245, l='MpServer', x=1032.28, y=64.74, z=-703.85], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/246, l='MpServer', x=1034.38, y=69.00, z=-718.78], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/247, l='MpServer', x=1035.19, y=63.00, z=-710.22], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/248, l='MpServer', x=1041.59, y=64.18, z=-722.41], EntityCharcoalSlime['entity.charcoalmod.EntityCharcoalSlime.name'/251, l='MpServer', x=1151.91, y=70.11, z=-718.25]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:415)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2566)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:984)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_73, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 772379752 bytes (736 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1448 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1448-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1448} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1448-1.7.10.jar) 
+	UCHIJAAAA	charcoalmod{0.7-1.7.10} [The Charcoal Mod] (bin) 
+	GL info: ' Vendor: 'ATI Technologies Inc.' Version: '4.5.13417 Compatibility Profile Context 15.300.1025.1001' Renderer: 'AMD Radeon R9 200 Series'
+	Launched Version: 1.7.10
+	LWJGL: 2.9.1
+	OpenGL: AMD Radeon R9 200 Series GL version 4.5.13417 Compatibility Profile Context 15.300.1025.1001, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)

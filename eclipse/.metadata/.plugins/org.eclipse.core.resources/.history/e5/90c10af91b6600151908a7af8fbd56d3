@@ -1,0 +1,46 @@
+package uk.co.lastresorts.charcoalmod.blocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+import uk.co.lastresorts.charcoalmod.CharcoalMod;
+
+public abstract class BlockCharcoalWire extends Block implements ITileEntityProvider {
+
+	protected BlockCharcoalWire(String unlocalizedName, Material material) {
+		super(material);
+		this.setBlockName(unlocalizedName);
+		this.setBlockTextureName(CharcoalMod.MODID + ":" + unlocalizedName);
+		this.setHardness(2.0F);
+		this.setResistance(10.0F);
+		this.setCreativeTab(CreativeTabs.tabDecorations);
+		this.setStepSound(soundTypePiston);
+	}
+	
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
+
+	@Override
+	public TileEntity createNewTileEntity(World world, int meta) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
+		
+	}
+	
+	public boolean checkForWire(World world, int x, int y, int z) {
+		if(world.getBlock(x, y, z) instanceof BlockCharcoalWire) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+}

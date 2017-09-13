@@ -1,0 +1,27 @@
+[23:16:22] [main/INFO]: Setting user: Player758
+[23:16:23] [Client thread/INFO]: LWJGL Version: 2.9.1
+[23:16:27] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[23:16:27] [Sound Library Loader/INFO]: Sound engine started
+[23:16:29] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[23:16:29] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[23:16:29] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[23:16:29] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[23:16:29] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[23:16:30] [Sound Library Loader/INFO]: Sound engine started
+[23:16:33] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[23:16:33] [Server thread/INFO]: Generating keypair
+[23:16:33] [Server thread/INFO]: Preparing start region for level 0
+[23:16:34] [Server thread/INFO]: Changing view distance to 12, from 10
+[23:16:34] [Server thread/INFO]: Player758[local:E:ebadfab2] logged in with entity id 142 at (1045.3541085742763, 69.0, 717.9875000119209)
+[23:16:34] [Server thread/INFO]: Player758 joined the game
+[23:16:37] [Server thread/INFO]: Saving and pausing game...
+[23:16:38] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[23:16:38] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[23:16:38] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[23:17:03] [Server thread/INFO]: Stopping server
+[23:17:03] [Server thread/INFO]: Saving players
+[23:17:03] [Server thread/INFO]: Saving worlds
+[23:17:03] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Overworld
+[23:17:03] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/Nether
+[23:17:03] [Server thread/INFO]: Saving chunks for level 'Copy of Copy of Copy of Copy of'/The End
+[23:17:04] [Client thread/INFO]: Stopping!

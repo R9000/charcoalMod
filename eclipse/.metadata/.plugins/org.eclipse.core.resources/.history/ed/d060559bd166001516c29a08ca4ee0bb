@@ -1,0 +1,174 @@
+package uk.co.lastresorts.charcoalmod.tileentities;
+
+import java.util.ArrayList;
+
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+import uk.co.lastresorts.charcoalmod.BlockPos;
+import uk.co.lastresorts.charcoalmod.ICharcoalEnergyCarrier;
+import uk.co.lastresorts.charcoalmod.ICharcoalEnergyGiver;
+import uk.co.lastresorts.charcoalmod.ICharcoalEnergyUser;
+import uk.co.lastresorts.charcoalmod.power.PowerNetwork;
+
+public class TileEntityBasicCharcoalWire2 extends TileEntity implements ICharcoalEnergyCarrier {
+	
+	public PowerNetwork parentNetwork;
+	
+	public boolean hasCheckedOnThisUpdate = false;
+	public boolean hasGainedNetwork = false;
+	
+	public TileEntityBasicCharcoalWire2() {
+	}
+	
+	public TileEntityBasicCharcoalWire2(World world) {
+		if(worldObj == null) worldObj = world;
+	}
+	
+	@Override
+	public void updateEntity() {
+		if(parentNetwork == null && !hasGainedNetwork) {
+			createNewNetwork();
+			hasGainedNetwork = true;
+		}
+	}
+	
+	@Override
+	public void readFromNBT(NBTTagCompound tagCompound) {
+		super.readFromNBT(tagCompound);
+		NBTTagCompound wireData = tagCompound.getCompoundTag("wireData");
+		
+    }
+	
+	@Override
+	public void writeToNBT(NBTTagCompound tagCompound) {
+		super.writeToNBT(tagCompound);
+		NBTTagCompound wireData = new NBTTagCompound();
+		
+		
+		tagCompound.setTag("wireData", wireData);
+    }
+
+	@Override
+	public void addWireToList(BlockPos pos) {
+		
+	}
+
+	@Override
+	public void addReceiverToList(BlockPos pos) {
+		
+	}
+
+	@Override
+	public void addTransmitterToList(BlockPos pos) {
+		
+	}
+
+	@Override
+	public ArrayList<BlockPos> getConnectedWires() {
+		return null;
+	}
+
+	@Override
+	public ArrayList<BlockPos> getConnectedReceivers() {
+		return null;
+	}
+
+	@Override
+	public ArrayList<BlockPos> getConnectedTransmitters() {
+		return null;
+	}
+
+	@Override
+	public boolean gethasChecked() {
+		return hasCheckedOnThisUpdate;
+	}
+
+	@Override
+	public void setHasChecked(boolean hasChecked) {
+		this.hasCheckedOnThisUpdate = hasChecked;
+	}
+	
+	@Override
+	public void clearConnected() {
+		parentNetwork.removeWireFromList(new BlockPos(xCoord, yCoord, zCoord));
+		parentNetwork = null;
+	}
+
+	@Override
+	public void setNetwork(PowerNetwork network) {
+		if(parentNetwork != null) clearConnected();
+		parentNetwork = network;
+		parentNetwork.addWireToList(new BlockPos(xCoord, yCoord, zCoord));
+		parentNetwork.clearConnections();
+		checkForUsers();
+	}
+
+	@Override
+	public PowerNetwork getNetwork() {
+		return parentNetwork;
+	}
+
+	@Override
+	public boolean createNewNetwork() {
+		if(!worldObj.isRemote) {
+			BlockPos pos = new BlockPos(xCoord, yCoord, zCoord);
+			BlockPos neighbors[] = pos.getSurroundingPoses();
+			
+			ArrayList<PowerNetwork> surroundingNetworks = new ArrayList();
+			
+			for(int i = 0; i < neighbors.length; i ++) {
+				TileEntity te = worldObj.getTileEntity(neighbors[i].x, neighbors[i].y, neighbors[i].z);
+				if(te != null && te instanceof ICharcoalEnergyCarrier) {
+					ICharcoalEnergyCarrier carrier = (ICharcoalEnergyCarrier)te;
+					if(carrier.getNetwork() != null) {
+						surroundingNetworks.add(carrier.getNetwork());
+					}
+				}
+			}
+			switch(surroundingNetworks.size()) {
+			case 0:
+				setNetwork(new PowerNetwork(worldObj));
+				parentNetwork.refreshNetwork();
+				System.out.println("Created a new network!");
+				return true;
+			case 1:
+				setNetwork(surroundingNetworks.get(0));
+				parentNetwork.refreshNetwork();
+				System.out.println("Connected to an existing network!");
+				return true;
+			default:
+				setNetwork(PowerNetwork.mergeNetworks(worldObj, surroundingNetworks));
+				parentNetwork.refreshNetwork();
+				System.out.println("Merged multiple networks!");
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean checkForUsers() {
+		if(this.parentNetwork != null) {
+			
+			BlockPos pos = new BlockPos(xCoord, yCoord, zCoord);
+			BlockPos neighbors[] = pos.getSurroundingPoses();
+			for(int i = 0; i < neighbors.length; i++) {
+				TileEntity te = worldObj.getTileEntity(neighbors[i].x, neighbors[i].y, neighbors[i].z);
+				if(te != null) {
+					if(te instanceof ICharcoalEnergyUser) {
+						ICharcoalEnergyUser user = (ICharcoalEnergyUser)te;
+						parentNetwork.addReceiverToList(neighbors[i]);
+						
+					}else if(te instanceof ICharcoalEnergyGiver) {
+						ICharcoalEnergyGiver giver = (ICharcoalEnergyGiver)te;
+						parentNetwork.addTransmitterToList(neighbors[i]);
+						
+					}
+				}
+			}
+			return true;
+		}
+		return false;
+	}
+}
