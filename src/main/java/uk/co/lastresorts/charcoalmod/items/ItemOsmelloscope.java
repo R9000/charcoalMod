@@ -6,12 +6,14 @@ import java.util.Random;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.play.server.S12PacketEntityVelocity;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.IIcon;
@@ -27,6 +29,13 @@ public class ItemOsmelloscope extends Item{
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer player, List info, boolean useExtraInformation) {
 		info.add("Can gather untold knowledge.");
+		if(stack.hasTagCompound()) {
+			NBTTagCompound nbt = stack.getTagCompound();
+			if(nbt.hasKey("savedEntityName")) {
+				 info.add("Saved entity:");
+				 info.add(nbt.getString("savedEntityName"));
+			}
+		}
 	}
 	
 	@Override
@@ -52,12 +61,39 @@ public class ItemOsmelloscope extends Item{
 		return false;
 	}
 	
+	/*	///DEPRECATED///
 	@Override
 	public boolean itemInteractionForEntity(ItemStack stack, EntityPlayer player, EntityLivingBase entity)
     {
-        if(!player.getEntityWorld().isRemote) player.addChatMessage(new ChatComponentTranslation(entity.getCommandSenderName()));
+        if(!player.getEntityWorld().isRemote) player.addChatMessage(new ChatComponentTranslation(entity.getClass().getName()));
         return true;
     }
+    */
+	
+	@Override
+	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
+		if(!player.getEntityWorld().isRemote){
+			if(player.isSneaking()){
+				NBTTagCompound nbt;
+			    if (stack.hasTagCompound())
+			    {
+			        nbt = stack.getTagCompound();
+			    }
+			    else
+			    {
+			        nbt = new NBTTagCompound();
+			    }
+			    
+			    nbt.setString("savedEntityName", entity.getClass().getName());
+			    stack.setTagCompound(nbt);
+			    player.addChatMessage(new ChatComponentTranslation("Entity saved to Osmelloscope!"));
+			}else{
+				player.addChatMessage(new ChatComponentTranslation(entity.getClass().getName()));
+			}
+		}
+		
+		return true;
+	};
 	
 	@Override
 	public Item setMaxStackSize(int par1)

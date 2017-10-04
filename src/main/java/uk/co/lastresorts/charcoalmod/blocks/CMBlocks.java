@@ -99,6 +99,7 @@ public class CMBlocks {
 		GameRegistry.addShapedRecipe(new ItemStack(CMBlocks.storageBattery, 1, 2), new Object[] {"BWB", "VRV", "BWB", 'V', CMItems.voltageRegCircuit, 'B', new ItemStack(CMBlocks.storageBattery, 1, 1), 'W', basicWire2, 'R', new ItemStack(reinforcedCharcoalBlock)});
 		GameRegistry.addShapedRecipe(new ItemStack(basicWire2, 3), new Object[] {" p ", "GEG", " p ", 'p', CMItems.pliableCharcoal, 'E', CMItems.hiEnergyCharcoal, 'G', Items.gold_ingot});
 		GameRegistry.addShapedRecipe(new ItemStack(CMBlocks.itemDetector), new Object[] {"IGI", "RCR", "IXI", 'C', Items.comparator, 'I', Items.iron_ingot, 'G', new ItemStack(Blocks.glass_pane), 'X', new ItemStack(Blocks.chest), 'R', Items.redstone});
+		GameRegistry.addShapedRecipe(new ItemStack(CMBlocks.entityDetector), new Object[] {"IGI", "RCR", "IXI", 'C', Items.comparator, 'I', Items.iron_ingot, 'G', new ItemStack(Blocks.glass_pane), 'X', Items.writable_book, 'R', Items.redstone});
 	}
 	
 	public static void registerRender(Block block, int meta) {

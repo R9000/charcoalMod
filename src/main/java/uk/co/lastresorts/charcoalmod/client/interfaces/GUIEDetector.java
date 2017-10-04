@@ -33,9 +33,8 @@ public class GUIEDetector extends GUICharcoal {
 	public void initGui() {
 		textfield = new GuiTextField(this.fontRendererObj, guiLeft+51, guiTop+42, 74, 20);
 		textfield.setFocused(true);
-		textfield.setMaxStringLength(40);
+		textfield.setMaxStringLength(100);
 		Keyboard.enableRepeatEvents(true);
-		//TODO: Update client-side GUI with server text.
 		super.initGui();
 	}
 	
@@ -54,6 +53,8 @@ public class GUIEDetector extends GUICharcoal {
 	protected void drawGuiContainerForegroundLayer(int par1, int par2)
     {
         this.fontRendererObj.drawString("Entity Detector", 8, 6, 4210752);
+        this.fontRendererObj.drawString("Currently searching for:", 8, 20, 4210752);
+        this.fontRendererObj.drawString(detector.getEntityName(), 8, 30, 4210752);
         
         //Tooltip code courtesy of StrangeOne101 on the MC forums: http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/modification-development/1438128-1-6-4-forge-help-with-tooltips-on-mouse-hover
         int k = (this.width - this.xSize) / 2; //X axis on GUI

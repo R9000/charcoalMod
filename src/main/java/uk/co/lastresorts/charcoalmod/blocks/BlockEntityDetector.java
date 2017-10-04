@@ -11,15 +11,17 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.Facing;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import uk.co.lastresorts.charcoalmod.CharcoalMod;
+import uk.co.lastresorts.charcoalmod.items.CMItems;
 import uk.co.lastresorts.charcoalmod.tileentities.TileEntityEntityDetector;
-import uk.co.lastresorts.charcoalmod.tileentities.TileEntityItemDetector;
 
 public class BlockEntityDetector extends Block implements ITileEntityProvider {
 
@@ -83,7 +85,27 @@ public class BlockEntityDetector extends Block implements ITileEntityProvider {
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int meta, float hitX, float hitY, float hitZ)
     {
 		if (!world.isRemote) {
+			ItemStack heldItem = player.getHeldItem();
+			if(heldItem != null && heldItem.getItem() == CMItems.osmelloscope && heldItem.hasTagCompound()) {
+				NBTTagCompound nbt = heldItem.getTagCompound();
+				if(nbt.hasKey("savedEntityName")) {
+					String nameToSave = nbt.getString("savedEntityName");
+					if(nameToSave != null && nameToSave != "") {
+						TileEntity te = world.getTileEntity(x, y, z);
+						if(te != null && te instanceof TileEntityEntityDetector) {
+							TileEntityEntityDetector ed = (TileEntityEntityDetector)te;
+							ed.setText(nameToSave);
+							player.addChatMessage(new ChatComponentText("Entity name successfully transferred!"));
+						}
+					}else{
+						player.addChatMessage(new ChatComponentText("No entity saved in osmelloscope."));
+					}
+				}else{
+					player.addChatMessage(new ChatComponentText("No entity saved in osmelloscope."));
+				}
+			}else{
 			FMLNetworkHandler.openGui(player, CharcoalMod.instance, 3, world, x, y, z);
+			}
 		}
 		return true;
 	}

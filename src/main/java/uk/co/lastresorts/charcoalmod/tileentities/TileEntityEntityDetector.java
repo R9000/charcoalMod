@@ -23,12 +23,13 @@ import uk.co.lastresorts.charcoalmod.network.TextPacketC2S;
 
 public class TileEntityEntityDetector extends TileEntity implements IInventory {
 	
-	public String entityName;
+	protected String entityName;
 	private int orientation, mode;
 	private boolean activated;
 	private BlockPos detectionSpace;
 	private AxisAlignedBB boundingBox;
 	private CharcoalMod mod = CharcoalMod.instance;
+	public String nameToDisplay;
 	
 	public TileEntityEntityDetector() {
 		entityName = "";
@@ -37,6 +38,7 @@ public class TileEntityEntityDetector extends TileEntity implements IInventory {
 		mode = 0;
 		detectionSpace = new BlockPos(xCoord, yCoord, zCoord);
 		boundingBox = AxisAlignedBB.getBoundingBox(detectionSpace.x, detectionSpace.y, detectionSpace.z, detectionSpace.x+1, detectionSpace.y+1, detectionSpace.z+1);
+		nameToDisplay = "Nothing";
 	}
 	
 	@Override
@@ -80,6 +82,7 @@ public class TileEntityEntityDetector extends TileEntity implements IInventory {
 		}
 		setOrientation((int)tagCompound.getByte("orientation"));
 		mode = ((int)tagCompound.getByte("mode"));
+		entityName = (tagCompound.getString("name"));
     }
 	
 	@Override
@@ -163,6 +166,7 @@ public class TileEntityEntityDetector extends TileEntity implements IInventory {
 	{
 		NBTTagCompound syncData = new NBTTagCompound();
 		syncData.setInteger("mode", mode);
+		syncData.setString("name", entityName);
 		
 		return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, syncData);
    	}
@@ -171,6 +175,12 @@ public class TileEntityEntityDetector extends TileEntity implements IInventory {
 	public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt)
 	{
 		this.mode = (int)pkt.func_148857_g().getInteger("mode");	//LOAD the TE's mode from the server, since that's where the NBT is saved, otherwise they become unsynchronised. Damn packets.
+		this.entityName = pkt.func_148857_g().getString("name");
+		if(entityName != null && entityName.length() > 32) {	//If string is too long to display, shorten it and replace the missing bit with "...".
+			nameToDisplay = "..." + entityName.substring(-(32-entityName.length()));
+		}else{
+			nameToDisplay = entityName;
+		}
 	}
 	
 	public void removeItem(int slot) {
@@ -225,7 +235,7 @@ public class TileEntityEntityDetector extends TileEntity implements IInventory {
 			if(hasName) {
 				for(i = 0; i < list.size(); i++){	//Loop through all found entities.
 					entity = (Entity) list.get(i);
-					if(entity != null && entityName.equals(entity.getCommandSenderName())) return true;
+					if(entity != null && entityName.equals(entity.getClass().getName())) return true;
 				}
 			}else if(list.size() > 0){
 				return true;	//If there are no filters applied, return true if any item is present.
@@ -240,9 +250,8 @@ public class TileEntityEntityDetector extends TileEntity implements IInventory {
 					entity = (Entity) list.get(i);
 					boolean unfilteredEntity = true;
 					
-					if(entityName != null && entityName.equals(entity.getCommandSenderName()))	unfilteredEntity = false;
+					if(entityName != null && entityName.equals(entity.getClass().getName()))	unfilteredEntity = false;
 					if(unfilteredEntity)  return false;
-					
 				}
 				return true;
 			}else if(list.size() > 0){
@@ -308,5 +317,10 @@ public class TileEntityEntityDetector extends TileEntity implements IInventory {
 	public void setText(String text)
 	{
 		if(text != null) this.entityName = text;
+	}
+	
+	public String getEntityName()
+	{
+		return this.nameToDisplay;
 	}
 }

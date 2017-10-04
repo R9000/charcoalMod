@@ -28,6 +28,7 @@ item.charcoal_fire_wand.name=Charcoal Fire Wand
 item.charcoal_teleport_wand.name=Charcoal Teleport Wand
 item.charcoal_plant_wand.name=Charcoal Plant Wand
 item.charcoal_air_wand.name=Charcoal Air Wand
+item.osmelloscope.name=Osmelloscope
 
 item.wand_crystal_0.name=Charcoal Wand Crystal
 item.wand_crystal_1.name=Water Wand Crystal
@@ -56,3 +57,4 @@ tile.smore_ore.name=Smore Ore
 tile.ash_pile.name=Ash Pile
 tile.basic_wire2.name=Charcoal Energy Wire
 tile.item_detector.name=Item Detector
+tile.entity_detector.name=Entity Detector
