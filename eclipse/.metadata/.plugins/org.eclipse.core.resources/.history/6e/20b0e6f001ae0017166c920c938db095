@@ -1,0 +1,305 @@
+package uk.co.lastresorts.charcoalmod.tileentities;
+
+import java.util.ArrayList;
+
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+import net.minecraft.tileentity.TileEntity;
+import uk.co.lastresorts.charcoalmod.BlockPos;
+import uk.co.lastresorts.charcoalmod.ICharcoalEnergyCarrier;
+import uk.co.lastresorts.charcoalmod.ICharcoalEnergyGiver;
+import uk.co.lastresorts.charcoalmod.ICharcoalEnergyStorage;
+import uk.co.lastresorts.charcoalmod.ICharcoalEnergyUser;
+import uk.co.lastresorts.charcoalmod.ICharcoalFuel;
+import uk.co.lastresorts.charcoalmod.blocks.CMBlocks;
+import uk.co.lastresorts.charcoalmod.items.CMItems;
+
+public class TileEntityChargeRelay extends TileEntity implements ICharcoalEnergyGiver, IInventory {
+	
+	public int storedPower = 0;
+	public final int powerBufferSize = 400;
+	public int burnTime = 0;
+	public int maxCurrentBurnTime = 0;	//Used for drawing the progress bar.
+	public ItemStack item;
+	public Item validItems[] = {CMItems.energizedCharcoal};
+	public ArrayList<BlockPos> linkedReceivers = new ArrayList();
+	public boolean hasScanned = false;
+	
+	public TileEntityChargeRelay() {
+		hasScanned = false;
+	}
+	
+	@Override
+	public void updateEntity() {
+		if(!worldObj.isRemote) {
+			if(burnTime > 0) {
+				if(charge(1)) {
+					burnTime--;
+				}
+				worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+				markDirty();
+			}else{
+				if(item!= null) {
+					if(item.getItem() instanceof ICharcoalEnergyStorage) {
+						ICharcoalEnergyStorage storageItem = (ICharcoalEnergyStorage)item.getItem();
+						if(this.canCharge(1) && storageItem.discharge(item, 1)) {
+							this.charge(1);
+						}
+					}else if(item.getItem() instanceof ICharcoalFuel) {
+						ICharcoalFuel fuel = (ICharcoalFuel)item.getItem();
+						this.burnTime += fuel.getBurnTime();
+						this.maxCurrentBurnTime = fuel.getBurnTime();
+						if(item.stackSize < 2) {
+							this.removeItem();
+						}else{
+							item.stackSize--;
+						}
+					}
+				}
+				worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+				markDirty();
+			}
+			//Holds off on charging anything until it can give power to all connected receivers.
+			//TODO: Consider revising this to make it so all transmitter outputs are pooled and added together before transmitting, since it makes little sense for every transmitter to wait until they can all give out enough power if they can cover it between them.
+			//Alternatively, make power transmission possible by floats, but be careful of floating-point errors.
+			//ALSO, make it so it only counts receivers that can charge, not ones that can't.
+			int rate = getDischargeRate();
+			if(this.canDischarge(rate * linkedReceivers.size())) {
+				
+				for(int i = 0; i < this.linkedReceivers.size(); i++) {
+					TileEntity te = worldObj.getTileEntity(this.linkedReceivers.get(i).x, this.linkedReceivers.get(i).y, this.linkedReceivers.get(i).z);
+					if(te != null && te instanceof ICharcoalEnergyUser) {
+						ICharcoalEnergyUser receiver = (ICharcoalEnergyUser)te;
+						if(receiver.canCharge(rate)) {
+							this.discharge(rate);
+							receiver.charge(rate);
+						}
+					}
+				}
+			}
+			if(!hasScanned) {
+				if(worldObj.getBlock(xCoord, yCoord, zCoord) == CMBlocks.chargeRelay) {
+					CMBlocks.chargeRelay.onNeighborBlockChange(worldObj, xCoord, yCoord, zCoord, null);
+					hasScanned = true;
+				}
+			}
+		}
+	}
+	
+	@Override
+	public void readFromNBT(NBTTagCompound tagCompound) {
+		super.readFromNBT(tagCompound);
+		NBTTagCompound relayData = tagCompound.getCompoundTag("relayData");
+		this.storedPower = relayData.getInteger("storedPower");
+		this.burnTime = relayData.getInteger("burnTime");
+		this.maxCurrentBurnTime = relayData.getInteger("maxCurrentBurnTime");
+		setInventorySlotContents(0, ItemStack.loadItemStackFromNBT(relayData));
+    }
+	
+	@Override
+	public void writeToNBT(NBTTagCompound tagCompound) {
+		super.writeToNBT(tagCompound);
+		NBTTagCompound relayData = new NBTTagCompound();
+		relayData.setInteger("storedPower", storedPower);
+		relayData.setInteger("burnTime", burnTime);
+		relayData.setInteger("maxCurrentBurnTime", maxCurrentBurnTime);
+		if(item != null) {
+			item.writeToNBT(relayData);
+		}
+		
+		tagCompound.setTag("relayData", relayData);
+    }
+
+	@Override
+	public boolean charge(int chargeAmount) {
+		if(this.canCharge(chargeAmount)){
+			this.storedPower += chargeAmount;
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	@Override
+	public boolean discharge(int dischargeAmount) {
+		if(this.canDischarge(dischargeAmount)) {
+			this.storedPower -= dischargeAmount;
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	@Override
+	public int getSizeInventory() {
+		return 1;
+	}
+
+	@Override
+	public ItemStack getStackInSlot(int slot) {
+		return item;
+	}
+
+	@Override
+	public ItemStack decrStackSize(int slot, int amount) {
+		ItemStack stack = getStackInSlot(0);
+		if(stack != null){
+			if (stack.stackSize <= amount){
+				setInventorySlotContents(0, null);
+				}else{
+					stack = stack.splitStack(amount);
+					onInventoryChanged();
+			}
+		}
+		return stack;
+	}
+
+	@Override
+	public ItemStack getStackInSlotOnClosing(int slot) {
+		ItemStack item = getStackInSlot(slot);
+		setInventorySlotContents(slot, null);
+		return item;
+	}
+
+	@Override
+	public void setInventorySlotContents(int slot, ItemStack stack) {
+		item = stack;
+		
+		if(stack != null && stack.stackSize > getInventoryStackLimit()){
+			stack.stackSize = getInventoryStackLimit();
+		}
+		
+		onInventoryChanged();
+	}
+
+	@Override
+	public String getInventoryName() {
+		return "InventoryRelay";
+	}
+
+	@Override
+	public boolean hasCustomInventoryName() {
+		return false;
+	}
+
+	@Override
+	public int getInventoryStackLimit() {
+		return 64;
+	}
+
+	@Override
+	public boolean isUseableByPlayer(EntityPlayer player) {
+		return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) != this ? false : player.getDistanceSq((double)this.xCoord + 0.5D, (double)this.yCoord + 0.5D, (double)this.zCoord + 0.5D) <= 64.0D;
+	}
+
+	@Override
+	public void openInventory() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void closeInventory() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isItemValidForSlot(int slot, ItemStack stack) {
+		for(int i = 0; i < validItems.length; i++) {
+			if(stack.getItem() == validItems[i] || stack.getItem() instanceof ICharcoalFuel) return true;
+		}
+		return false;
+	}
+	
+	public void onInventoryChanged() {
+		this.markDirty();
+	}
+
+	@Override
+	public boolean canCharge(int chargeAmount) {
+		return (this.storedPower + chargeAmount) <= this.powerBufferSize;
+	}
+
+	@Override
+	public boolean canDischarge(int dischargeAmount) {
+		return (this.storedPower-dischargeAmount) >= 0;
+	}
+	
+	@Override
+	public Packet getDescriptionPacket()
+	{
+		NBTTagCompound syncData = new NBTTagCompound();
+	    syncData.setInteger("storedPower", storedPower);
+	    syncData.setInteger("burnTime", burnTime);
+	    syncData.setInteger("maxCurrentBurnTime", maxCurrentBurnTime);
+		return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, syncData);
+   	}
+	
+	@Override
+	public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt)
+	{
+		this.storedPower = (int)pkt.func_148857_g().getInteger("storedPower");
+		this.burnTime = (int)pkt.func_148857_g().getInteger("burnTime");
+		this.maxCurrentBurnTime = (int)pkt.func_148857_g().getInteger("maxCurrentBurnTime");
+	}
+	
+	public void removeItem() {
+		this.item = null;
+	}
+
+	@Override
+	public void addReceiverToList(BlockPos pos) {
+		//Only add positions not already in the list.
+		boolean canAdd = true;
+		for(int i = 0; i < linkedReceivers.size(); i++) {
+			if(pos.areEqual(pos, linkedReceivers.get(i))) canAdd = false;
+		}
+		
+		if(canAdd) linkedReceivers.add(pos);
+		//System.out.println("Added receiver at: " + pos.x + " " + pos.y + " " + pos.z);
+	}
+
+	@Override
+	public void removeReceiverFromList(BlockPos pos) {
+		for(int i = 0; i < linkedReceivers.size(); i++) {
+			if(pos.areEqual(pos, linkedReceivers.get(i))) {
+				linkedReceivers.remove(i);
+				//System.out.println("//////////////Removed receiver at: " + pos.x + " " + pos.y + " " + pos.z);
+			}
+		}
+	}
+
+	@Override
+	public boolean getCanAddTransmit(BlockPos wirePos) {
+		return true;
+	}
+
+	@Override
+	public int getDischargeRate() {
+		return 1;
+	}
+
+	//Refresh any wires around the block.
+	@Override
+	public void refreshSurroundingWires() {
+		if(!worldObj.isRemote) {
+			BlockPos thisPos = new BlockPos(xCoord, yCoord, zCoord);
+			BlockPos[] neighbors = thisPos.getSurroundingPoses();
+			
+			for(int i = 0; i < neighbors.length; i++) {
+				TileEntity te = worldObj.getTileEntity(neighbors[i].x, neighbors[i].y, neighbors[i].z);
+				if(te != null && te instanceof ICharcoalEnergyCarrier) {
+					ICharcoalEnergyCarrier wire = (ICharcoalEnergyCarrier)te;
+					if(wire.getCanBeConnected()) wire.getNetwork().refreshNetwork();
+				}
+			}
+		}	
+	}
+}
