@@ -1,33 +1,29 @@
-[23:33:45] [main/INFO]: Setting user: Player65
-[23:33:46] [Client thread/INFO]: LWJGL Version: 2.9.1
-[23:33:51] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
-[23:33:52] [Sound Library Loader/INFO]: Sound engine started
-[23:33:54] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[23:33:54] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[23:33:54] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
-[23:33:55] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[23:33:55] [Client thread/INFO]: Created: 512x256 textures/items-atlas
-[23:33:56] [Sound Library Loader/INFO]: Sound engine started
-[23:34:07] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[23:34:07] [Server thread/INFO]: Generating keypair
-[23:34:07] [Server thread/INFO]: Preparing start region for level 0
-[23:34:08] [Server thread/INFO]: Changing view distance to 12, from 10
-[23:34:08] [Server thread/INFO]: Player65[local:E:4ba28d19] logged in with entity id 282 at (48.62993901657574, 70.0, 253.45974574348142)
-[23:34:08] [Server thread/INFO]: Player65 joined the game
-[23:34:09] [Server thread/INFO]: Saving and pausing game...
-[23:34:09] [Server thread/INFO]: Saving chunks for level 'Tree Test'/Overworld
-[23:34:09] [Server thread/INFO]: Saving chunks for level 'Tree Test'/Nether
-[23:34:09] [Server thread/INFO]: Saving chunks for level 'Tree Test'/The End
-[23:34:28] [Server thread/INFO]: Player65 has just earned the achievement [Taking Inventory]
-[23:34:28] [Client thread/INFO]: [CHAT] Player65 has just earned the achievement [Taking Inventory]
-[23:36:09] [Server thread/INFO]: Saving and pausing game...
-[23:36:09] [Server thread/INFO]: Saving chunks for level 'Tree Test'/Overworld
-[23:36:09] [Server thread/INFO]: Saving chunks for level 'Tree Test'/Nether
-[23:36:09] [Server thread/INFO]: Saving chunks for level 'Tree Test'/The End
-[23:36:10] [Server thread/INFO]: Stopping server
-[23:36:10] [Server thread/INFO]: Saving players
-[23:36:10] [Server thread/INFO]: Saving worlds
-[23:36:10] [Server thread/INFO]: Saving chunks for level 'Tree Test'/Overworld
-[23:36:10] [Server thread/INFO]: Saving chunks for level 'Tree Test'/Nether
-[23:36:10] [Server thread/INFO]: Saving chunks for level 'Tree Test'/The End
-[23:36:11] [Client thread/INFO]: Stopping!
+[04:55:18] [main/INFO]: Setting user: Player505
+[04:55:19] [Client thread/INFO]: LWJGL Version: 2.9.1
+[04:55:23] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:55:24] [Sound Library Loader/INFO]: Sound engine started
+[04:55:25] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:55:25] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[04:55:25] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:The Charcoal Mod
+[04:55:25] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[04:55:26] [Client thread/INFO]: Created: 512x256 textures/items-atlas
+[04:55:26] [Sound Library Loader/INFO]: Sound engine started
+[04:55:30] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[04:55:30] [Server thread/INFO]: Generating keypair
+[04:55:30] [Server thread/INFO]: Preparing start region for level 0
+[04:55:31] [Server thread/INFO]: Changing view distance to 12, from 10
+[04:55:32] [Server thread/INFO]: Player505[local:E:835edeb9] logged in with entity id 280 at (42.34668336404656, 69.875, 250.08066195168348)
+[04:55:32] [Server thread/INFO]: Player505 joined the game
+[04:56:27] [Server thread/INFO]: Player505 has just earned the achievement [Taking Inventory]
+[04:56:27] [Client thread/INFO]: [CHAT] Player505 has just earned the achievement [Taking Inventory]
+[04:57:48] [Server thread/INFO]: Saving and pausing game...
+[04:57:48] [Server thread/INFO]: Saving chunks for level 'Tree Test'/Overworld
+[04:57:48] [Server thread/INFO]: Saving chunks for level 'Tree Test'/Nether
+[04:57:48] [Server thread/INFO]: Saving chunks for level 'Tree Test'/The End
+[04:57:49] [Server thread/INFO]: Stopping server
+[04:57:49] [Server thread/INFO]: Saving players
+[04:57:49] [Server thread/INFO]: Saving worlds
+[04:57:49] [Server thread/INFO]: Saving chunks for level 'Tree Test'/Overworld
+[04:57:49] [Server thread/INFO]: Saving chunks for level 'Tree Test'/Nether
+[04:57:49] [Server thread/INFO]: Saving chunks for level 'Tree Test'/The End
+[04:57:50] [Client thread/INFO]: Stopping!
