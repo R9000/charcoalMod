@@ -14,14 +14,11 @@ public class PowerNetwork {
 	public ArrayList<BlockPos> wires = new ArrayList();
 	public ArrayList<BlockPos> receivers = new ArrayList();
 	public ArrayList<BlockPos> transmitters = new ArrayList();
-	public int netNumber;
 	
 	public World worldObj;
 	
 	public PowerNetwork(World world) {
 		this.worldObj = world;
-		//Random rand = new Random();
-		//netNumber = rand.nextInt();
 	}
 	
 	public static PowerNetwork mergeNetworks(World world, ArrayList<PowerNetwork> networks) {
@@ -99,16 +96,6 @@ public class PowerNetwork {
 	public void refreshNetwork() {
 		if(!worldObj.isRemote) {
 			//Checks for any receivers or transmitters connected to the network, and notifies the transmitters of the receivers.
-			for(int i = 0; i < wires.size(); i++) {
-				BlockPos currentWire = wires.get(i);
-				TileEntity te = worldObj.getTileEntity(currentWire.x, currentWire.y, currentWire.z);
-				if(te != null && te instanceof ICharcoalEnergyCarrier) {
-					ICharcoalEnergyCarrier carrier = (ICharcoalEnergyCarrier)te;
-					if(carrier.getNetwork() != null) {
-						//System.out.println("Refreshing at: " + te.xCoord + " " + te.yCoord + " " + te.zCoord);
-					}
-				}
-			}
 			
 			//Disconnect all receivers and transmitters before reformatting.
 			this.clearConnections();
@@ -122,13 +109,13 @@ public class PowerNetwork {
 					carrier.checkForUsers();
 				}
 			}
-			
+			//Add the every receiver to every transmitter's list in order to supply them power.
 			notifyTransmitters();
 		}
 	}
 	
 	public void clearConnections() {
-		//Disconnect all receivers and transmitters before reformatting.
+		//Disconnect all receivers from the transmitters before reformatting.
 		if(!worldObj.isRemote) {
 			for(int j = 0; j < transmitters.size(); j++) {
 				TileEntity te = worldObj.getTileEntity(transmitters.get(j).x, transmitters.get(j).y, transmitters.get(j).z);
@@ -144,6 +131,7 @@ public class PowerNetwork {
 		transmitters.clear();
 	}
 	
+	//Add the every receiver to every transmitter's list in order to supply them power.
 	public void notifyTransmitters() {
 		for(int j = 0; j < transmitters.size(); j++) {
 			BlockPos currentTransmitter = transmitters.get(j);
@@ -155,5 +143,10 @@ public class PowerNetwork {
 				}
 			}
 		}
+	}
+	
+	//Provide the positions of every transmitter on the network (used for refreshing when a wire is destroyed).
+	public ArrayList<BlockPos> getTransmitterPositions() {
+		return transmitters;
 	}
 }

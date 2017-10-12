@@ -9,7 +9,12 @@ public class BlockPos {
 		this.z = z;
 	}
 	
-	public boolean areEqual(BlockPos pos1, BlockPos pos2) {
+	//Copy constructor
+	public BlockPos(BlockPos pos) {
+		this(pos.x, pos.y, pos.z);
+	}
+	
+	public static boolean areEqual(BlockPos pos1, BlockPos pos2) {
 		if(pos1.x == pos2.x && pos1.y == pos2.y && pos1.z == pos2.z) {
 			return true;
 		}else{

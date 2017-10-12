@@ -1,18 +1,29 @@
 package uk.co.lastresorts.charcoalmod.blocks;
 
+import static net.minecraftforge.common.util.ForgeDirection.EAST;
+import static net.minecraftforge.common.util.ForgeDirection.NORTH;
+import static net.minecraftforge.common.util.ForgeDirection.SOUTH;
+import static net.minecraftforge.common.util.ForgeDirection.WEST;
+
+import java.util.List;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import uk.co.lastresorts.charcoalmod.CharcoalMod;
 import uk.co.lastresorts.charcoalmod.ICharcoalEnergyCarrier;
+import uk.co.lastresorts.charcoalmod.items.CMItems;
 import uk.co.lastresorts.charcoalmod.power.PowerNetwork;
 import uk.co.lastresorts.charcoalmod.tileentities.TileEntityBasicCharcoalWire2;
 
@@ -43,20 +54,11 @@ public abstract class BlockCharcoalWire2 extends Block implements ITileEntityPro
         return false;
     }
     
-    /*
-    @SideOnly(Side.CLIENT)
-    @Override
-    public AxisAlignedBB getSelectedBoundingBoxFromPool(World world, int x, int y, int z)
-    {
-    	return getCollisionBoundingBoxFromPool(world, x, y, z);
-    }
-    */
-    
     @Override
     public void setBlockBoundsBasedOnState(IBlockAccess iBlockAccess, int x, int y, int z) {
-    	float x1, x2, x3, x4, x5, x6;
-    	x1=x2=x3=0.3125F;
-    	x4=x5=x6=0.6875F;
+    	float x1, y1, z1, x2, y2, z2;
+    	x1=y1=z1=0.3125F;
+    	x2=y2=z2=0.6875F;
     	
     	
 		TileEntity te = iBlockAccess.getTileEntity(x, y, z);
@@ -64,17 +66,42 @@ public abstract class BlockCharcoalWire2 extends Block implements ITileEntityPro
 			TileEntityBasicCharcoalWire2 wire = (TileEntityBasicCharcoalWire2)te;
 			boolean connectedSides[] = wire.connectedSides;
 			if(connectedSides != null) {
-				if(connectedSides[0]) x2 = 0;
-				if(connectedSides[1]) x5 = 1;
-				if(connectedSides[2]) x3 = 0;
-				if(connectedSides[3]) x6 = 1;
+				if(connectedSides[0]) y1 = 0;
+				if(connectedSides[1]) y2 = 1;
+				if(connectedSides[2]) z1 = 0;
+				if(connectedSides[3]) z2 = 1;
 				if(connectedSides[4]) x1 = 0;
-				if(connectedSides[5]) x4 = 1;
+				if(connectedSides[5]) x2 = 1;
 				}
 		}
-		this.setBlockBounds(x1, x2, x3, x4, x5, x6);
+		this.setBlockBounds(x1, y1, z1, x2, y2, z2);
     }
-
+    
+    @Override
+    public void addCollisionBoxesToList(World world, int x, int y, int z, AxisAlignedBB box, List list, Entity entity)
+    {
+    	float x1, y1, z1, x2, y2, z2;
+    	x1=y1=z1=0.3125F;
+    	x2=y2=z2=0.6875F;
+    	
+    	
+		TileEntity te = world.getTileEntity(x, y, z);
+		if(te != null && te instanceof TileEntityBasicCharcoalWire2) {
+			TileEntityBasicCharcoalWire2 wire = (TileEntityBasicCharcoalWire2)te;
+			boolean connectedSides[] = wire.connectedSides;
+			if(connectedSides != null) {
+				if(connectedSides[0]) y1 = 0;
+				if(connectedSides[1]) y2 = 1;
+				if(connectedSides[2]) z1 = 0;
+				if(connectedSides[3]) z2 = 1;
+				if(connectedSides[4]) x1 = 0;
+				if(connectedSides[5]) x2 = 1;
+				}
+		}
+		this.setBlockBounds(x1, y1, z1, x2, y2, z2);
+		super.addCollisionBoxesToList(world, x, y, z, box, list, entity);
+    }
+    
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {
 		// TODO Auto-generated method stub
@@ -83,8 +110,8 @@ public abstract class BlockCharcoalWire2 extends Block implements ITileEntityPro
 	
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
-		/*
-		if(!world.isRemote) {
+		////////////Prints out connected network stuff for assistance with debugging.
+		if(!world.isRemote && player.getHeldItem() != null && player.getHeldItem().getItem() == CMItems.osmelloscope) {
 			TileEntity te = world.getTileEntity(x, y, z);
 			if(te != null && te instanceof ICharcoalEnergyCarrier) {
 				ICharcoalEnergyCarrier wire = (ICharcoalEnergyCarrier)te;
@@ -103,11 +130,10 @@ public abstract class BlockCharcoalWire2 extends Block implements ITileEntityPro
 					for(int i = 0; i < powerNetwork.transmitters.size(); i++) {
 						System.out.println(powerNetwork.transmitters.get(i).x + " " + powerNetwork.transmitters.get(i).y + " " + powerNetwork.transmitters.get(i).z);
 					}
-					System.out.println("Network number: " + powerNetwork.netNumber);
 				}
 			}
 		}
-		*/
+		
 		return false;
 	}
 	

@@ -16,10 +16,10 @@ import uk.co.lastresorts.charcoalmod.power.PowerNetwork;
 
 public class TileEntityBasicCharcoalWire2 extends TileEntity implements ICharcoalEnergyCarrier {
 	
-	public PowerNetwork parentNetwork;
+	private PowerNetwork parentNetwork;
 	
-	public boolean hasGainedNetwork = false;
-	public boolean canBeConnected = true;
+	private boolean hasGainedNetwork = false;
+	private boolean canBeConnected = true;
 	public boolean connectedSides[] = {false, false, false, false, false, false};
 	
 	public TileEntityBasicCharcoalWire2() {
@@ -144,7 +144,7 @@ public class TileEntityBasicCharcoalWire2 extends TileEntity implements ICharcoa
 
 	@Override
 	public boolean checkForUsers() {
-		if(worldObj != null && !worldObj.isRemote && this.parentNetwork != null) {
+		if(worldObj != null && !worldObj.isRemote && this.parentNetwork != null && this.canBeConnected) {
 			
 			BlockPos pos = new BlockPos(xCoord, yCoord, zCoord);
 			BlockPos neighbors[] = pos.getSurroundingPoses();
@@ -198,17 +198,41 @@ public class TileEntityBasicCharcoalWire2 extends TileEntity implements ICharcoa
 		}
 	}
 
+	//Only called just before a wire is destroyed.
 	@Override
 	public void disconnectAdjacentWires() {
 		if(worldObj != null && !worldObj.isRemote) {
 			BlockPos pos = new BlockPos(xCoord, yCoord, zCoord);
 			BlockPos neighbors[] = pos.getSurroundingPoses();
+
+			if(parentNetwork != null) {
+				ArrayList<BlockPos> transmitters = parentNetwork.getTransmitterPositions();
+				ArrayList<BlockPos> copyTransmitters = new ArrayList();
+				
+				for(int i = 0; i < transmitters.size(); i++) {
+					copyTransmitters.add(new BlockPos(transmitters.get(i)));
+				}
+				
+				//Refresh the network of this wire
+				this.parentNetwork.refreshNetwork();
+				
+				//Refresh the network of the wires surrounding each previously-connected transmitter.
+				for(int i = 0; i < copyTransmitters.size(); i++)
+				{
+					BlockPos tPos = copyTransmitters.get(i);
+					TileEntity te = worldObj.getTileEntity(tPos.x, tPos.y, tPos.z);
+					if(te != null && te instanceof ICharcoalEnergyGiver) {
+						ICharcoalEnergyGiver transmitter = (ICharcoalEnergyGiver)te;
+						transmitter.refreshSurroundingWires();
+					}
+				}
+			}
 			
 			for(int i = 0; i < neighbors.length; i ++) {
 				TileEntity te = worldObj.getTileEntity(neighbors[i].x, neighbors[i].y, neighbors[i].z);
 				if(te != null && te instanceof ICharcoalEnergyCarrier) {
 					ICharcoalEnergyCarrier carrier = (ICharcoalEnergyCarrier)te;
-					PowerNetwork adjNetwork = carrier.getNetwork();
+					//PowerNetwork adjNetwork = carrier.getNetwork();
 					//System.out.println("Setting new network.");
 					carrier.setNetwork(new PowerNetwork(worldObj));
 					if(carrier.getCanBeConnected()) {

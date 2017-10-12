@@ -10,12 +10,14 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import uk.co.lastresorts.charcoalmod.BlockPos;
 import uk.co.lastresorts.charcoalmod.CharcoalMod;
+import uk.co.lastresorts.charcoalmod.items.CMItems;
 import uk.co.lastresorts.charcoalmod.tileentities.TileEntityChargeRelay;
 import uk.co.lastresorts.charcoalmod.tileentities.TileEntityCharger;
 
@@ -60,7 +62,21 @@ public class BlockChargeRelay extends Block implements ITileEntityProvider {
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int meta, float hitX, float hitY, float hitZ)
     {
 		if (!world.isRemote) {
+			//Displays debug info about connected receivers:
+			if(player.getHeldItem() != null && player.getHeldItem().getItem() == CMItems.osmelloscope) {
+				System.out.println("Current receivers at:");
+				TileEntity te = world.getTileEntity(x, y, z);
+				if(te != null && te instanceof TileEntityChargeRelay) {
+					TileEntityChargeRelay ter = (TileEntityChargeRelay)te;
+					
+					for(int i = 0; i < ter.linkedReceivers.size(); i++) {
+						BlockPos recPos = ter.linkedReceivers.get(i);
+						System.out.println("x:" + recPos.x + " y:" + recPos.y + " z:" + recPos.z);
+					}
+				}
+			}else{	//Opens GUI:
 			FMLNetworkHandler.openGui(player, CharcoalMod.instance, 0, world, x, y, z);
+			}
 		}
 		return true;
 	}
@@ -76,12 +92,14 @@ public class BlockChargeRelay extends Block implements ITileEntityProvider {
 			if(world.getTileEntity(x, y, z+1) != null) receivers.add(world.getTileEntity(x, y, z+1));
 			for(int i = 0; i < receivers.size(); i++) {
 				if(receivers.get(i) != null && receivers.get(i) instanceof TileEntityCharger) {
+					
 					TileEntityCharger charger = (TileEntityCharger) receivers.get(i);
+					BlockPos coords = charger.centreCoords;
 					if(charger.hasCompleteStructure) {
-						if(charger.xCoord == charger.centreCoords.x && charger.yCoord == charger.centreCoords.y && charger.zCoord == charger.centreCoords.z) {
+						if(charger.xCoord == coords.x && charger.yCoord == coords.y && charger.zCoord == coords.z) {
 							te.addReceiverToList(new BlockPos(charger.xCoord, charger.yCoord, charger.zCoord));
-						}else if(world.getTileEntity(charger.centreCoords.x, charger.centreCoords.y, charger.centreCoords.z) != null && world.getTileEntity(charger.centreCoords.x, charger.centreCoords.y, charger.centreCoords.z) instanceof TileEntityCharger) {
-							te.addReceiverToList(new BlockPos(charger.centreCoords.x, charger.centreCoords.y, charger.centreCoords.z));
+						}else if(world.getTileEntity(coords.x, coords.y, coords.z) != null && world.getTileEntity(coords.x, coords.y, coords.z) instanceof TileEntityCharger) {
+							te.addReceiverToList(new BlockPos(coords.x, coords.y, coords.z));
 						}
 					}
 				}

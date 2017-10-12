@@ -8,6 +8,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -17,6 +18,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import uk.co.lastresorts.charcoalmod.CharcoalMod;
+import uk.co.lastresorts.charcoalmod.tileentities.TileEntityBasicCharcoalWire2;
 import uk.co.lastresorts.charcoalmod.tileentities.TileEntityBatteryBase;
 import uk.co.lastresorts.charcoalmod.tileentities.TileEntityT1Battery;
 import uk.co.lastresorts.charcoalmod.tileentities.TileEntityT2Battery;
@@ -85,6 +87,33 @@ public class BlockChargeStorageBattery extends BlockConfigurableSides implements
 		this.setBlockBounds(lowerCorner, y1, lowerCorner, upperCorner, y2, upperCorner);
     }
 	
+	@Override
+    public void addCollisionBoxesToList(World world, int x, int y, int z, AxisAlignedBB box, List list, Entity entity)
+    {
+		float lowerCorner=0.25F, upperCorner=0.75F, y1=0.25F, y2=0.75F;
+	    	
+		TileEntityBatteryBase te = (TileEntityBatteryBase)world.getTileEntity(x, y, z);
+		switch(te.powerBufferSize) {
+		case 1600:
+			lowerCorner=0.125F;
+			upperCorner=0.875F;
+			y1=0.1875F;
+			y2 = 0.8125F;
+			break;
+		case 6400:
+			lowerCorner=0.0625F;
+			upperCorner=0.9375F;
+			y1=0.125F;
+			y2=0.875F;
+			break;
+		default:
+		}
+		
+		this.setBlockBounds(lowerCorner, y1, lowerCorner, upperCorner, y2, upperCorner);
+		super.addCollisionBoxesToList(world, x, y, z, box, list, entity);
+    }
+	
+	/*
 	@SideOnly(Side.CLIENT)
 	@Override
     public AxisAlignedBB getSelectedBoundingBoxFromPool(World world, int x, int y, int z)
@@ -92,6 +121,8 @@ public class BlockChargeStorageBattery extends BlockConfigurableSides implements
         this.setBlockBoundsBasedOnState(world, x, y, z);
         return super.getSelectedBoundingBoxFromPool(world, x, y, z);
     }
+	
+	*/
 	
 	/*
 	@Override

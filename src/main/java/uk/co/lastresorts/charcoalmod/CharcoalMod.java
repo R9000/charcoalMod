@@ -39,6 +39,7 @@ public class CharcoalMod
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		
 	}
 	
 	@EventHandler

@@ -6,4 +6,16 @@ public class TileEntityT2Battery extends TileEntityBatteryBase {
 		super(1600);
 	}
 
+	@Override
+	public int getDischargeRate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void refreshSurroundingWires() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -12,6 +12,7 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import uk.co.lastresorts.charcoalmod.BlockPos;
+import uk.co.lastresorts.charcoalmod.ICharcoalEnergyCarrier;
 import uk.co.lastresorts.charcoalmod.ICharcoalEnergyGiver;
 import uk.co.lastresorts.charcoalmod.ICharcoalEnergyStorage;
 import uk.co.lastresorts.charcoalmod.ICharcoalEnergyUser;
@@ -64,16 +65,21 @@ public class TileEntityChargeRelay extends TileEntity implements ICharcoalEnergy
 				worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 				markDirty();
 			}
-			for(int i = 0; i < this.linkedReceivers.size(); i++) {
-				if(this.canDischarge(1)) {
+			//Holds off on charging anything until it can give power to all connected receivers.
+			//TODO: Consider revising this to make it so all transmitter outputs are pooled and added together before transmitting, since it makes little sense for every transmitter to wait until they can all give out enough power if they can cover it between them.
+			//Alternatively, make power transmission possible by floats, but be careful of floating-point errors.
+			//ALSO, make it so it only counts receivers that can charge, not ones that can't.
+			int rate = getDischargeRate();
+			if(this.canDischarge(rate * linkedReceivers.size())) {
+				
+				for(int i = 0; i < this.linkedReceivers.size(); i++) {
 					TileEntity te = worldObj.getTileEntity(this.linkedReceivers.get(i).x, this.linkedReceivers.get(i).y, this.linkedReceivers.get(i).z);
 					if(te != null && te instanceof ICharcoalEnergyUser) {
 						ICharcoalEnergyUser receiver = (ICharcoalEnergyUser)te;
-						if(receiver.canCharge(1)) {
-							this.discharge(1);
-							receiver.charge(1);
+						if(receiver.canCharge(rate)) {
+							this.discharge(rate);
+							receiver.charge(rate);
 						}
-							
 					}
 				}
 			}
@@ -273,5 +279,29 @@ public class TileEntityChargeRelay extends TileEntity implements ICharcoalEnergy
 	@Override
 	public boolean getCanAddTransmit(BlockPos wirePos) {
 		return true;
+	}
+
+	@Override
+	public int getDischargeRate() {
+		return 1;
+	}
+
+	//Refresh the networks of any wires around the block.
+	@Override
+	public void refreshSurroundingWires() {
+		if(!worldObj.isRemote) {
+			BlockPos thisPos = new BlockPos(xCoord, yCoord, zCoord);
+			BlockPos[] neighbors = thisPos.getSurroundingPoses();
+			for(int i = 0; i < neighbors.length; i++) {
+				TileEntity te = worldObj.getTileEntity(neighbors[i].x, neighbors[i].y, neighbors[i].z);
+				if(te != null && te instanceof ICharcoalEnergyCarrier) {
+					ICharcoalEnergyCarrier wire = (ICharcoalEnergyCarrier)te;
+					if(wire.getCanBeConnected()) {
+						wire.getNetwork().refreshNetwork();
+						wire.getNetwork().notifyTransmitters();
+					}
+				}
+			}
+		}	
 	}
 }

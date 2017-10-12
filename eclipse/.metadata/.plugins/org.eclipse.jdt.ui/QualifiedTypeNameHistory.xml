@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="net.minecraft.inventory.InventoryBasic"/>
 <fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.ICharcoalEnergyUser"/>
+<fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.ICharcoalEnergyCarrier"/>
 <fullyQualifiedTypeName name="net.minecraft.network.Packet"/>
 <fullyQualifiedTypeName name="net.minecraft.tileentity.TileEntity"/>
 <fullyQualifiedTypeName name="net.minecraft.block.ITileEntityProvider"/>
@@ -31,33 +31,33 @@
 <fullyQualifiedTypeName name="uk.co.lastresorts.legendaryAxes.BlockPos"/>
 <fullyQualifiedTypeName name="net.minecraft.init.Blocks"/>
 <fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.client.interfaces.SlotDetector"/>
+<fullyQualifiedTypeName name="net.minecraft.util.AxisAlignedBB"/>
 <fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.blocks.BlockItemDetector"/>
 <fullyQualifiedTypeName name="com.sun.javafx.scene.traversal.Direction"/>
 <fullyQualifiedTypeName name="com.sun.javafx.image.IntPixelAccessor"/>
 <fullyQualifiedTypeName name="cpw.mods.fml.common.network.NetworkRegistry"/>
-<fullyQualifiedTypeName name="net.minecraft.nbt.NBTTagCompound"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.relauncher.Side"/>
 <fullyQualifiedTypeName name="cpw.mods.fml.common.network.ByteBufUtils"/>
 <fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.tileentities.TileEntityItemDetector"/>
 <fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.CharcoalMod"/>
 <fullyQualifiedTypeName name="cpw.mods.fml.relauncher.SideOnly"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.blocks.BlockAshes"/>
 <fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.entities.EntityAshes"/>
 <fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.blocks.CMBlocks"/>
 <fullyQualifiedTypeName name="net.minecraft.block.Block"/>
 <fullyQualifiedTypeName name="net.minecraft.block.material.Material"/>
-<fullyQualifiedTypeName name="net.minecraft.item.Item"/>
 <fullyQualifiedTypeName name="net.minecraft.util.ChatComponentTranslation"/>
 <fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.items.ItemOsmelloscope"/>
-<fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.tileentities.TileEntityEntityDetector"/>
 <fullyQualifiedTypeName name="net.minecraft.client.gui.GuiScreen"/>
 <fullyQualifiedTypeName name="org.lwjgl.input.Keyboard"/>
 <fullyQualifiedTypeName name="net.minecraft.client.gui.GuiButton"/>
-<fullyQualifiedTypeName name="net.minecraft.init.Items"/>
-<fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.ICharcoalEnergyCarrier"/>
-<fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.items.CMItems"/>
 <fullyQualifiedTypeName name="net.minecraft.entity.Entity"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="net.minecraft.util.AxisAlignedBB"/>
-<fullyQualifiedTypeName name="cpw.mods.fml.relauncher.Side"/>
+<fullyQualifiedTypeName name="net.minecraft.nbt.NBTTagCompound"/>
+<fullyQualifiedTypeName name="net.minecraft.item.Item"/>
+<fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.items.CMItems"/>
+<fullyQualifiedTypeName name="uk.co.lastresorts.charcoalmod.tileentities.TileEntityEntityDetector"/>
+<fullyQualifiedTypeName name="net.minecraft.util.ChatComponentText"/>
+<fullyQualifiedTypeName name="net.minecraft.init.Items"/>
 </qualifiedTypeNameHistroy>
